@@ -26,6 +26,10 @@ export default function Navbar() {
               <Link href="/bolig" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 border-t border-slate-50">Bolig</Link>
             </div>
           </div>
+          <Link href="/kalkulator" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-1 py-2">
+            Kalkulator
+            <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+          </Link>
         </nav>
         <div className="flex items-center">
           <Link href="/veiviser" className="text-sm font-semibold bg-slate-900 hover:bg-blue-600 text-white px-5 py-2.5 rounded-full transition-all hover:shadow-md hover:scale-105 active:scale-95">
