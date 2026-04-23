@@ -7,8 +7,11 @@ import Footer from '@/components/shared/Footer';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'Smartskatt.no - Finn dine glemte skattefradrag',
+  title: 'Smartskatt.no - Finn dine glemte skattefradrag | Oppdatert for 2026',
   description: 'Vi oversetter komplekse norske skatteregler til enkle sparegrep. Bruk vår skatteveiviser for å finne fradrag du har krav på.',
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export default function RootLayout({

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Smartskatt Kalkulatoren | Beregn dine skattefradrag',
-  description: 'Interaktiv skattekalkulator for 2025. Legg inn dine tall og se hvor mye du kan spare i skatt umiddelbart.',
+  description: 'Interaktiv skattekalkulator for 2025/2026. Legg inn dine tall og se hvor mye du kan spare i skatt umiddelbart.',
 };
 
 export default function KalkulatorPage() {
@@ -18,7 +18,7 @@ export default function KalkulatorPage() {
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-sm font-medium mb-6 backdrop-blur-sm">
             <span className="flex h-2 w-2 rounded-full bg-blue-400 animate-pulse"></span>
-            Skatteregler for 2025
+            Skatteregler for 2025/2026
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
             Smartskatt Kalkulatoren
@@ -47,7 +47,7 @@ export default function KalkulatorPage() {
             </div>
             <h3 className="font-bold text-lg mb-2 text-slate-900">Hvor nøyaktig er estimatet?</h3>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Kalkulatoren bruker forenklede satser for 2025 for å gi et raskt overslag. Ditt faktiske skatteoppgjør kan variere basert på kommunale satser, formueskatt og andre komplekse faktorer vi ikke inkluderer her.
+              Kalkulatoren bruker forenklede satser for 2025/2026 for å gi et raskt overslag. Ditt faktiske skatteoppgjør kan variere basert på kommunale satser, formueskatt og andre komplekse faktorer vi ikke inkluderer her.
             </p>
           </div>
           

@@ -51,7 +51,7 @@ export default function WizardForm() {
         {step === 1 && (
           <div className="animate-in fade-in slide-in-from-right-8 duration-500 ease-out">
             <h2 className="text-3xl font-extrabold text-slate-900 mb-3">Personlig Situasjon</h2>
-            <p className="text-slate-500 mb-8 text-lg text-balance">La oss kartlegge grunnlaget. Velg det som stemmer for deg i 2024.</p>
+            <p className="text-slate-500 mb-8 text-lg text-balance">La oss kartlegge grunnlaget. Velg det som stemmer for deg i 2025/2026.</p>
             
             <div className="space-y-4">
               <BooleanOption 

@@ -15,11 +15,14 @@ export default function SmartskattKalkulator() {
   const [kryptoGevinst, setKryptoGevinst] = useState<number>(0);
   const [utleieInntekt, setUtleieInntekt] = useState<number>(0);
   const [formue, setFormue] = useState<number>(0);
+  const [fagforening, setFagforening] = useState<number>(0);
+  const [antallBarn, setAntallBarn] = useState<number>(0);
+  const [gaver, setGaver] = useState<number>(0);
   const [arbeidstype, setArbeidstype] = useState<'ansatt' | 'bedrift/ENK'>('ansatt');
 
   // Kalkulasjonslogikk
   const resultater = useMemo(() => {
-    // Reise: ((km * 2 * 230 dager) * 1.83) - 15250 (egenandel 2025)
+    // Reise: ((km * 2 * 230 dager) * 1.83) - 15250 (egenandel 2025/2026)
     // Skattebesparelsen er 22% av fradraget
     const totalKmAar = reiseKm * 2 * 230;
     const reiseFradrag = Math.max(0, (totalKmAar * 1.83) - 15250);
@@ -32,15 +35,39 @@ export default function SmartskattKalkulator() {
     // Krypto: Tap * 0.22
     const kryptoBesparelse = kryptoTap * 0.22;
 
-    const totalBesparelse = reiseBesparelse + gjeldBesparelse + kryptoBesparelse;
+    // Fagforening: Maks 8 700 kr
+    const fagforeningFradrag = Math.min(fagforening, 8700);
+    const fagforeningBesparelse = fagforeningFradrag * 0.22;
+
+    // Foreldrefradrag: 25 000 kr for første barn, 15 000 kr per påfølgende
+    let foreldreFradrag = 0;
+    if (antallBarn > 0) {
+      foreldreFradrag = 25000 + (antallBarn - 1) * 15000;
+    }
+    const foreldreBesparelse = foreldreFradrag * 0.22;
+
+    // Gaver: Maks 25 000 kr
+    const gaveFradrag = Math.min(gaver, 25000);
+    const gaveBesparelse = gaveFradrag * 0.22;
+
+    // Personfradrag: 108 550 kr
+    const personFradrag = 108550;
+    const personBesparelse = personFradrag * 0.22;
+
+    const totalBesparelse = reiseBesparelse + gjeldBesparelse + kryptoBesparelse + 
+                            fagforeningBesparelse + foreldreBesparelse + gaveBesparelse + personBesparelse;
 
     return {
       reiseBesparelse,
       gjeldBesparelse,
       kryptoBesparelse,
+      fagforeningBesparelse,
+      foreldreBesparelse,
+      gaveBesparelse,
+      personBesparelse,
       totalBesparelse,
     };
-  }, [gjeld, reiseKm, kryptoTap]);
+  }, [gjeld, reiseKm, kryptoTap, fagforening, antallBarn, gaver]);
 
   // Anbefalings-logikk
   const anbefalinger = useMemo(() => {
@@ -230,6 +257,45 @@ export default function SmartskattKalkulator() {
               />
             </div>
 
+            {/* Fagforeningskontingent */}
+            <div className="space-y-2">
+              <label className="block text-sm font-semibold text-slate-700">
+                Fagforeningskontingent (kr)
+              </label>
+              <input
+                type="number"
+                value={fagforening || ''}
+                onChange={(e) => setFagforening(Number(e.target.value))}
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+              />
+            </div>
+
+            {/* Antall barn under 12 år */}
+            <div className="space-y-2">
+              <label className="block text-sm font-semibold text-slate-700">
+                Antall barn (12 år og yngre)
+              </label>
+              <input
+                type="number"
+                value={antallBarn || ''}
+                onChange={(e) => setAntallBarn(Number(e.target.value))}
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+              />
+            </div>
+
+            {/* Gaver til frivillige organisasjoner */}
+            <div className="space-y-2 md:col-span-2">
+              <label className="block text-sm font-semibold text-slate-700">
+                Gaver til frivillige organisasjoner (kr)
+              </label>
+              <input
+                type="number"
+                value={gaver || ''}
+                onChange={(e) => setGaver(Number(e.target.value))}
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+              />
+            </div>
+
             {/* Reisevei til jobb */}
             <div className="space-y-4 md:col-span-2 mt-2 bg-slate-50 p-5 rounded-xl border border-slate-100">
               <div className="flex justify-between items-center">
@@ -272,6 +338,10 @@ export default function SmartskattKalkulator() {
               </div>
 
               <div className="space-y-3 pt-6 border-t border-slate-700/50">
+                <div className="flex justify-between text-sm">
+                  <span className="text-slate-400">Personfradrag (fast):</span>
+                  <span className="font-medium">{formatKr(resultater.personBesparelse)}</span>
+                </div>
                 {resultater.gjeldBesparelse > 0 && (
                   <div className="flex justify-between text-sm">
                     <span className="text-slate-400">Rentefradrag:</span>
@@ -288,6 +358,24 @@ export default function SmartskattKalkulator() {
                   <div className="flex justify-between text-sm">
                     <span className="text-slate-400">Kryptofradrag:</span>
                     <span className="font-medium">{formatKr(resultater.kryptoBesparelse)}</span>
+                  </div>
+                )}
+                {resultater.fagforeningBesparelse > 0 && (
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-400">Fagforening:</span>
+                    <span className="font-medium">{formatKr(resultater.fagforeningBesparelse)}</span>
+                  </div>
+                )}
+                {resultater.foreldreBesparelse > 0 && (
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-400">Foreldrefradrag:</span>
+                    <span className="font-medium">{formatKr(resultater.foreldreBesparelse)}</span>
+                  </div>
+                )}
+                {resultater.gaveBesparelse > 0 && (
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-400">Gavefradrag:</span>
+                    <span className="font-medium">{formatKr(resultater.gaveBesparelse)}</span>
                   </div>
                 )}
               </div>

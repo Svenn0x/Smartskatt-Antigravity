@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import Logo from './Logo';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,13 +22,8 @@ export default function Navbar() {
     <>
       <header className="sticky top-0 z-50 w-full border-b border-slate-200/50 bg-white/80 backdrop-blur-md transition-all">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group active:scale-95 transition-transform">
-            <div className="w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold shadow-sm shadow-blue-200 group-hover:bg-blue-700 transition-colors">
-              S
-            </div>
-            <span className="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-blue-700 transition-colors">
-              Smartskatt
-            </span>
+          <Link href="/" className="group active:scale-95 transition-transform hover:opacity-90">
+            <Logo variant="light" />
           </Link>
           
           {/* Desktop Navigation */}

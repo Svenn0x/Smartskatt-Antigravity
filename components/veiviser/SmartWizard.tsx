@@ -52,7 +52,7 @@ export default function SmartWizard() {
     const dager = 230;
     const totalKm = answers.kmPerDag * dager;
     const sats = 1.83;
-    const egenandel = 14950; // 2024-sats
+    const egenandel = 15250; // 2025/2026-sats
     
     const fradrag = (totalKm * sats) - egenandel;
     return fradrag > 0 ? Math.round(fradrag) : 0;

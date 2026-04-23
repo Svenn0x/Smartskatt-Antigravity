@@ -8,7 +8,7 @@ export default function Home() {
       <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-24 pb-16 text-center lg:pt-32 lg:pb-24 animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium mb-8">
           <span className="flex h-2 w-2 rounded-full bg-blue-600"></span>
-          Oppdatert med skatteregler for 2024
+          Oppdatert med skatteregler for 2026
         </div>
         
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 text-balance leading-tight">
