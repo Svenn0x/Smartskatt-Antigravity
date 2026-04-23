@@ -2,6 +2,9 @@
 
 import { useState, useMemo } from 'react';
 import AffiliateButton from '../shared/AffiliateButton';
+import RecommendationCard from './RecommendationCard';
+import ComparisonBox from './ComparisonBox';
+import { Building2, Bitcoin, Home, Landmark, Wallet } from 'lucide-react';
 import { formatKr } from '@/lib/taxCalculations';
 
 export default function SmartskattKalkulator() {
@@ -9,6 +12,10 @@ export default function SmartskattKalkulator() {
   const [gjeld, setGjeld] = useState<number>(2500000);
   const [reiseKm, setReiseKm] = useState<number>(15);
   const [kryptoTap, setKryptoTap] = useState<number>(0);
+  const [kryptoGevinst, setKryptoGevinst] = useState<number>(0);
+  const [utleieInntekt, setUtleieInntekt] = useState<number>(0);
+  const [formue, setFormue] = useState<number>(0);
+  const [arbeidstype, setArbeidstype] = useState<'ansatt' | 'bedrift/ENK'>('ansatt');
 
   // Kalkulasjonslogikk
   const resultater = useMemo(() => {
@@ -35,6 +42,78 @@ export default function SmartskattKalkulator() {
     };
   }, [gjeld, reiseKm, kryptoTap]);
 
+  // Anbefalings-logikk
+  const anbefalinger = useMemo(() => {
+    const list = [];
+
+    // Scenario D: Bedriftseier
+    if (arbeidstype === 'bedrift/ENK') {
+      list.push({
+        id: 'fiken',
+        tittel: 'Siden du driver ENK:',
+        tekst: 'Slipp frykten for å gjøre feil. Fiken gjør regnskapet forståelig for alle.',
+        partner: 'fiken',
+        url: 'https://fiken.no',
+        label: 'Start gratis',
+        ikon: <Building2 className="w-5 h-5" />
+      });
+    }
+
+    // Scenario B: Kryptoinvestor
+    if (kryptoGevinst > 0 || kryptoTap > 0) {
+      list.push({
+        id: 'kryptosekken',
+        tittel: 'Siden du har handlet krypto:',
+        tekst: 'Unngå baksmell. Få en ferdig utfylt rapport til skattemeldingen på få minutter.',
+        partner: 'kryptosekken',
+        url: 'https://kryptosekken.no',
+        label: 'Start gratis',
+        ikon: <Bitcoin className="w-5 h-5" />
+      });
+    }
+
+    // Scenario: Formue (Kron)
+    if (formue > 0) {
+      list.push({
+        id: 'kron',
+        tittel: 'Siden du har formue:',
+        tekst: 'Få pengene dine til å vokse smartere med Norges enkleste investeringsapp.',
+        partner: 'kron',
+        url: 'https://kron.no',
+        label: 'Start gratis',
+        ikon: <Wallet className="w-5 h-5" />
+      });
+    }
+
+    // Scenario C: Utleier
+    if (utleieInntekt > 0) {
+      list.push({
+        id: 'hybel',
+        tittel: 'Siden du leier ut:',
+        tekst: 'Gjør utleien profesjonell og trygg. Bruk Hybel.no for kontrakter og depositum.',
+        partner: 'hybel',
+        url: 'https://hybel.no',
+        label: 'Gå til Hybel.no',
+        ikon: <Home className="w-5 h-5" />
+      });
+    }
+
+    // Scenario A: Lønnstaker med mye gjeld
+    if (gjeld > 500000 && arbeidstype === 'ansatt') {
+      list.push({
+        id: 'lendo',
+        tittel: `Siden du har over ${formatKr(gjeld)} i lån:`,
+        tekst: 'Du kan potensielt spare flere tusen i måneden på å samle lånene dine.',
+        partner: 'lendo',
+        url: 'https://lendo.no',
+        label: 'Sjekk din rente',
+        ikon: <Landmark className="w-5 h-5" />
+      });
+    }
+
+    return list.slice(0, 2);
+  }, [arbeidstype, kryptoGevinst, kryptoTap, utleieInntekt, gjeld, formue]);
+
   return (
     <div className="w-full max-w-6xl mx-auto flex flex-col gap-12">
       <div className="flex flex-col lg:flex-row gap-8 items-start">
@@ -42,7 +121,37 @@ export default function SmartskattKalkulator() {
         <div className="w-full lg:w-7/12 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-6">Dine opplysninger</h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Arbeidstype */}
+            <div className="space-y-2 md:col-span-2">
+              <label className="block text-sm font-semibold text-slate-700">
+                Arbeidssituasjon
+              </label>
+              <div className="flex flex-col md:flex-row gap-4">
+                <button
+                  type="button"
+                  onClick={() => setArbeidstype('ansatt')}
+                  className={`flex-1 py-4 px-4 rounded-xl border font-medium transition-all active:scale-[0.98] ${
+                    arbeidstype === 'ansatt'
+                      ? 'bg-blue-50 border-blue-500 text-blue-700 shadow-sm'
+                      : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
+                  }`}
+                >
+                  Lønnstaker
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setArbeidstype('bedrift/ENK')}
+                  className={`flex-1 py-4 px-4 rounded-xl border font-medium transition-all active:scale-[0.98] ${
+                    arbeidstype === 'bedrift/ENK'
+                      ? 'bg-blue-50 border-blue-500 text-blue-700 shadow-sm'
+                      : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
+                  }`}
+                >
+                  Bedrift / ENK
+                </button>
+              </div>
+            </div>
             {/* Lønn/Inntekt */}
             <div className="space-y-2">
               <label className="block text-sm font-semibold text-slate-700">
@@ -52,7 +161,7 @@ export default function SmartskattKalkulator() {
                 type="number"
                 value={inntekt || ''}
                 onChange={(e) => setInntekt(Number(e.target.value))}
-                className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium"
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
               />
             </div>
 
@@ -65,7 +174,20 @@ export default function SmartskattKalkulator() {
                 type="number"
                 value={gjeld || ''}
                 onChange={(e) => setGjeld(Number(e.target.value))}
-                className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium"
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+              />
+            </div>
+
+            {/* Formue */}
+            <div className="space-y-2">
+              <label className="block text-sm font-semibold text-slate-700">
+                Total formue / Oppsparte midler (kr)
+              </label>
+              <input
+                type="number"
+                value={formue || ''}
+                onChange={(e) => setFormue(Number(e.target.value))}
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
               />
             </div>
 
@@ -78,12 +200,38 @@ export default function SmartskattKalkulator() {
                 type="number"
                 value={kryptoTap || ''}
                 onChange={(e) => setKryptoTap(Number(e.target.value))}
-                className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium"
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+              />
+            </div>
+
+            {/* Krypto-gevinst i år */}
+            <div className="space-y-2">
+              <label className="block text-sm font-semibold text-slate-700">
+                Krypto-gevinst i år (kr)
+              </label>
+              <input
+                type="number"
+                value={kryptoGevinst || ''}
+                onChange={(e) => setKryptoGevinst(Number(e.target.value))}
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+              />
+            </div>
+
+            {/* Utleieinntekt */}
+            <div className="space-y-2">
+              <label className="block text-sm font-semibold text-slate-700">
+                Utleieinntekt i år (kr)
+              </label>
+              <input
+                type="number"
+                value={utleieInntekt || ''}
+                onChange={(e) => setUtleieInntekt(Number(e.target.value))}
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
               />
             </div>
 
             {/* Reisevei til jobb */}
-            <div className="space-y-4 sm:col-span-2 mt-2 bg-slate-50 p-5 rounded-xl border border-slate-100">
+            <div className="space-y-4 md:col-span-2 mt-2 bg-slate-50 p-5 rounded-xl border border-slate-100">
               <div className="flex justify-between items-center">
                 <label className="block text-sm font-semibold text-slate-700">
                   Reisevei til jobb (en vei)
@@ -98,7 +246,7 @@ export default function SmartskattKalkulator() {
                 max="200"
                 value={reiseKm}
                 onChange={(e) => setReiseKm(Number(e.target.value))}
-                className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                className="w-full h-4 md:h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
               />
               <div className="flex justify-between text-xs text-slate-500 font-medium">
                 <span>0 km</span>
@@ -146,25 +294,28 @@ export default function SmartskattKalkulator() {
             </div>
           </div>
 
-          {/* 3. Affiliate-trigger */}
-          {resultater.totalBesparelse > 5000 && (
-            <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-              <div className="bg-emerald-50/80 backdrop-blur-sm p-6 rounded-2xl border border-emerald-200 shadow-sm relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-1 h-full bg-emerald-500"></div>
-                
-                <h4 className="text-lg font-bold text-slate-900 mb-2">Du har betydelige fradrag! 🎯</h4>
-                <p className="text-sm text-slate-700 mb-6 leading-relaxed">
-                  Bruk <strong className="font-bold text-emerald-800">Fiken</strong> (for ENK) eller <strong className="font-bold text-emerald-800">Kryptosekken</strong> (for krypto) for å sikre at tallene blir riktige i skattemeldingen.
-                </p>
-                
-                <div className="space-y-3">
-                  <AffiliateButton partnerName="fiken" url="https://fiken.no" label="Kom i gang med Fiken" />
-                  {kryptoTap > 0 && (
-                    <AffiliateButton partnerName="kryptosekken" url="https://kryptosekken.no" label="Kom i gang med Kryptosekken" />
-                  )}
-                </div>
+          {/* 3. Ditt neste steg */}
+          {anbefalinger.length > 0 && (
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 space-y-4">
+              <div className="grid grid-cols-1 gap-4">
+                {anbefalinger.map((anb) => (
+                  <RecommendationCard
+                    key={anb.id}
+                    tittel={anb.tittel}
+                    tekst={anb.tekst}
+                    partner={anb.partner}
+                    url={anb.url}
+                    label={anb.label}
+                    ikon={anb.ikon}
+                  />
+                ))}
               </div>
             </div>
+          )}
+
+          {/* 4. Sammenligningsboks for Bedrift/ENK */}
+          {arbeidstype === 'bedrift/ENK' && (
+            <ComparisonBox />
           )}
         </div>
       </div>
@@ -211,7 +362,7 @@ function LeadCapture({ kalkulatorData }: { kalkulatorData: any }) {
 
   if (status === 'success') {
     return (
-      <div className="w-full bg-blue-50/50 border border-blue-100 rounded-3xl p-8 sm:p-12 relative overflow-hidden flex flex-col items-center justify-center text-center min-h-[300px]">
+      <div className="w-full bg-blue-50/50 border border-blue-100 rounded-3xl p-6 md:p-12 relative overflow-hidden flex flex-col items-center justify-center text-center min-h-[300px]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-400/10 blur-3xl rounded-full pointer-events-none"></div>
         <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-6 shadow-sm animate-bounce">
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
@@ -223,7 +374,7 @@ function LeadCapture({ kalkulatorData }: { kalkulatorData: any }) {
   }
 
   return (
-    <div className="w-full bg-blue-50/80 border border-blue-100 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-sm">
+    <div className="w-full bg-blue-50/80 border border-blue-100 rounded-3xl p-6 md:p-12 relative overflow-hidden shadow-sm">
       {/* Glow / Premium effect */}
       <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-400/20 blur-3xl rounded-full pointer-events-none"></div>
       <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-emerald-400/10 blur-3xl rounded-full pointer-events-none"></div>
@@ -237,20 +388,20 @@ function LeadCapture({ kalkulatorData }: { kalkulatorData: any }) {
           Send denne beregningen til din e-post, så sender vi deg også en sjekkliste for skattefradragene du ikke må glemme før fristen 30. april.
         </p>
         
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+        <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-lg mx-auto">
           <input
             type="email"
             value={email}
             onChange={handleEmailChange}
             placeholder="Din e-post..."
-            className="flex-1 px-5 py-4 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm text-lg"
+            className="flex-1 px-5 py-4 min-h-[56px] bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm text-lg"
             required
             disabled={status === 'loading'}
           />
           <button
             type="submit"
             disabled={!isValid || status === 'loading'}
-            className={`px-8 py-4 rounded-xl font-bold text-white transition-all shadow-md whitespace-nowrap ${
+            className={`px-8 py-4 min-h-[56px] rounded-xl font-bold text-white transition-all shadow-md whitespace-nowrap active:scale-[0.98] ${
               isValid && status !== 'loading' 
                 ? 'bg-emerald-600 hover:bg-emerald-700 hover:shadow-lg transform hover:-translate-y-0.5' 
                 : 'bg-emerald-400 cursor-not-allowed'

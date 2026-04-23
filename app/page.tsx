@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import DidYouKnow from '@/components/DidYouKnow';
 
 export default function Home() {
   return (
@@ -20,13 +21,16 @@ export default function Home() {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/veiviser" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg shadow-blue-200 hover:shadow-blue-300 transition-all hover:-translate-y-1 active:translate-y-0">
+          <Link href="/veiviser" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 min-h-[56px] rounded-full shadow-lg shadow-blue-200 hover:shadow-blue-300 transition-all hover:-translate-y-1 active:scale-[0.98] active:translate-y-0">
             Start Skatteveiviseren
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </Link>
         </div>
         <p className="mt-4 text-xs text-slate-500 font-medium uppercase tracking-wider">Tar under 2 minutter • Krever ingen innlogging</p>
       </section>
+
+      {/* Did You Know Widget */}
+      <DidYouKnow />
 
       {/* Guide Cards Section */}
       <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-12">
@@ -72,7 +76,7 @@ export default function Home() {
 
 function GuideCard({ title, href, description, icon, color }: { title: string; href: string; description: string, icon: string, color: string }) {
   return (
-    <Link href={href} className="group relative block p-6 bg-white border border-slate-200/60 rounded-2xl shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+    <Link href={href} className="group relative block p-6 bg-white border border-slate-200/60 rounded-2xl shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 hover:-translate-y-1 active:scale-[0.99] active:bg-slate-50 overflow-hidden">
       {/* Background glow effect on hover */}
       <div className={`absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 rounded-full bg-gradient-to-br ${color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-2xl`}></div>
       
