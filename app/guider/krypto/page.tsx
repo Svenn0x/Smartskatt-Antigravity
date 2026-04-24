@@ -1,4 +1,27 @@
+import type { Metadata } from 'next';
 import AffiliateButton from '@/components/shared/AffiliateButton';
+
+export const metadata: Metadata = {
+  title: 'Skatt på Kryptovaluta 2026 – Komplett guide til kryptoskatt',
+  description:
+    'Lær alt om skatt på kryptovaluta i 2025/2026. 22% fradrag for tap, regler for gevinst, mining, staking og riktig rapportering til Skatteetaten.',
+  alternates: {
+    canonical: 'https://smartskatt.no/guider/krypto',
+  },
+  openGraph: {
+    title: 'Skatt på Kryptovaluta 2026 | Smartskatt',
+    description:
+      '22% fradrag for tap, regler for gevinst og riktig rapportering til Skatteetaten i 2025/2026.',
+    url: 'https://smartskatt.no/guider/krypto',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Kryptoskatt guide 2026 | Smartskatt' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Skatt på Kryptovaluta 2026 | Smartskatt',
+    description: '22% fradrag for tap og riktig rapportering av krypto til Skatteetaten.',
+    images: ['/og-default.png'],
+  },
+};
 
 export default function KryptoGuidePage() {
   return (

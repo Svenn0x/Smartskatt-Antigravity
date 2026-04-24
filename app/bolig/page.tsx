@@ -1,9 +1,27 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import AffiliateCard from '@/components/shared/AffiliateCard';
 
-export const metadata = {
-  title: 'Utleieguiden 2025: Slik beholder du mer av leieinntekten | Smartskatt',
-  description: 'Skatteguide for utleie av bolig. Lær om Airbnb 85%-regelen og skattefri utleie.',
+export const metadata: Metadata = {
+  title: 'Utleieguiden 2026: Slik beholder du mer av leieinntekten',
+  description:
+    'Skatteguide for utleie av bolig i 2025/2026. Lær om Airbnb 85%-regelen, skattefri utleie og fradrag for vedlikehold. Oppdatert for skatteåret 2026.',
+  alternates: {
+    canonical: 'https://smartskatt.no/bolig',
+  },
+  openGraph: {
+    title: 'Utleieguiden 2026: Slik beholder du mer av leieinntekten | Smartskatt',
+    description:
+      'Skatteguide for utleie av bolig. Lær om Airbnb 85%-regelen, skattefri utleie og fradrag for vedlikehold.',
+    url: 'https://smartskatt.no/bolig',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Utleieguiden | Smartskatt' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Utleieguiden 2026 | Smartskatt',
+    description: 'Lær om Airbnb 85%-regelen og skattefri utleie i 2025/2026.',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function BoligPage() {

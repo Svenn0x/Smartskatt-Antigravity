@@ -1,47 +1,64 @@
-import React from 'react';
+import type { Metadata } from 'next';
 import AffiliateCard from '@/components/shared/AffiliateCard';
 
-export const metadata = {
-  title: 'Smarte fradrag for deg som driver for deg selv | Smartskatt',
-  description: 'Guide for ENK og SMB. Lær om 30 000 kr-grensen og SkatteFUNN.',
+export const metadata: Metadata = {
+  title: 'Smarte fradrag for deg som driver for deg selv',
+  description:
+    'Komplett guide for ENK og SMB. Lær om 30 000 kr-grensen, hjemmekontor, bilgodtgjørelse og SkatteFUNN. Oppdatert for 2026.',
+  alternates: {
+    canonical: 'https://smartskatt.no/bedrift',
+  },
+  openGraph: {
+    title: 'Smarte fradrag for deg som driver for deg selv | Smartskatt',
+    description:
+      'Komplett guide for ENK og SMB. Lær om 30 000 kr-grensen, hjemmekontor, bilgodtgjørelse og SkatteFUNN. Oppdatert for 2026.',
+    url: 'https://smartskatt.no/bedrift',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'ENK og SMB Skattefradrag | Smartskatt' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Smarte fradrag for deg som driver for deg selv | Smartskatt',
+    description: 'Komplett guide for ENK og SMB. Finn alle fradragene du har krav på.',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function BedriftPage() {
   return (
-    <main className="max-w-4xl mx-auto px-4 py-16 sm:px-6">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">Smarte fradrag for deg som driver for deg selv</h1>
-      
-      <div className="prose prose-xl prose-slate max-w-none mb-12">
-        <p className="lead text-2xl text-slate-600 font-medium mb-8">
-          Å optimalisere likviditeten er avgjørende for små og mellomstore bedrifter (SMB) samt enkeltpersonforetak (ENK). Her er fradragene og støtteordningene du må kjenne til i 2025.
-        </p>
-
-        <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Hevet grense for direkte fradrag</h2>
+    <div className="max-w-3xl mx-auto py-12 px-4">
+      <h1 className="text-3xl font-bold mb-4 text-slate-900">Smarte fradrag for deg som driver for deg selv</h1>
+      <p className="text-lg text-slate-600 mb-10">
+        Som ENK- eller AS-eier har du tilgang til en rekke fradrag som lønnstakere ikke kan benytte seg av. Her er det som virkelig monner på skatten.
+      </p>
+      <article className="prose prose-slate max-w-none">
+        <h2>30 000 kr-grensen for investering</h2>
         <p>
-          En av de viktigste endringene for å sikre god likviditet, er reglene for utgiftsføring av driftsmidler:
+          Kjøper du utstyr som koster under 30 000 kr ekskl. mva, kan du kostnadsføre hele beløpet direkte i innkjøpsåret. Over denne grensen må du avskrive over tid.
         </p>
-        <ul className="list-disc pl-6 mb-8 space-y-3">
-          <li><strong>30 000 kr-grensen:</strong> Den nye grensen for direkte utgiftsføring av driftsmidler (som PC, verktøy, eller programvare) er nå hevet til <strong>30 000 kr</strong>.</li>
-          <li><strong>Direkte skatteeffekt:</strong> Kjøper du noe under denne grensen, kan du kreve hele beløpet som fradrag umiddelbart, i stedet for å måtte avskrive det over flere år. Dette reduserer årets overskudd og skatten din betraktelig.</li>
-        </ul>
 
-        <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">SkatteFUNN: Få betalt for å innovere</h2>
+        <h2>Hjemmekontor</h2>
         <p>
-          Utvikler bedriften din nye tjenester, produkter eller produksjonsprosesser? Da kan du ha krav på betydelig støtte:
+          Som ENK kan du kreve fradrag for en forholdsmessig del av boligkostnadene dersom du har et eget rom dedikert til næringsvirksomhet. Alternativt kan du bruke sjablongsatsen på 2 050 kr per år.
         </p>
-        <ul className="list-disc pl-6 mb-8 space-y-3">
-          <li><strong>19% fradrag:</strong> Gjennom SkatteFUNN-ordningen kan du få <strong>19% av prosjektkostnadene</strong> som skattefradrag.</li>
-          <li><strong>Utbetaling:</strong> Er bedriften i en vekstfase og går med underskudd, vil skattefradraget <strong>utbetales i kontanter</strong> fra Skatteetaten i forbindelse med skatteoppgjøret.</li>
-        </ul>
-      </div>
 
-      <div className="mt-16">
-        <AffiliateCard 
-          partnerName="Fiken" 
-          description="Norges enkleste regnskapsprogram for småbedrifter. Fiken hjelper deg å få med alle fradragene du har krav på."
-          affiliateLink="https://fiken.no"
-        />
-      </div>
-    </main>
+        <h2>Bilgodtgjørelse og kjøregodtgjørelse</h2>
+        <p>
+          Bruker du privatbil i næringen, kan du trekke fra 1,83 kr/km for oppdragskjøring. Husk å føre kjørebok!
+        </p>
+
+        <h2>SkatteFUNN</h2>
+        <p>
+          Forsker og utvikler bedriften din ny teknologi eller løsninger? SkatteFUNN gir deg 19% skattefradrag på godkjente FoU-kostnader.
+        </p>
+
+        <div className="my-10">
+          <AffiliateCard
+            partnerName="Fiken"
+            affiliateLink="https://fiken.no"
+            description="Norges enkleste regnskapsprogram for småbedrifter. Fiken hjelper deg å få med alle fradragene du har krav på."
+          />
+        </div>
+      </article>
+    </div>
   );
 }

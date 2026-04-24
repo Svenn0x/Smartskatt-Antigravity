@@ -1,9 +1,27 @@
+import type { Metadata } from 'next';
 import SmartskattKalkulator from '@/components/kalkulator/SmartskattKalkulator';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Smartskatt Kalkulatoren | Beregn dine skattefradrag',
-  description: 'Interaktiv skattekalkulator for 2025/2026. Legg inn dine tall og se hvor mye du kan spare i skatt umiddelbart.',
+export const metadata: Metadata = {
+  title: 'Skattekalkulator 2026 – Beregn din besparelse umiddelbart',
+  description:
+    'Hvor mye kan du spare på skatten i år? Tast inn dine tall og se potensielle fradrag for lån, reise, krypto og ENK.',
+  alternates: {
+    canonical: 'https://smartskatt.no/kalkulator',
+  },
+  openGraph: {
+    title: 'Spar penger på skatten med Smartskatt.no',
+    description:
+      'Hvor mye kan du spare på skatten i år? Tast inn dine tall og se potensielle fradrag for lån, reise, krypto og ENK.',
+    url: 'https://smartskatt.no/kalkulator',
+    images: [{ url: '/og-social.png', width: 1200, height: 630, alt: 'Spar penger på skatten med Smartskatt.no' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Spar penger på skatten med Smartskatt.no',
+    description: 'Hvor mye kan du spare på skatten i år? Tast inn dine tall og se potensielle fradrag.',
+    images: ['/og-social.png'],
+  },
 };
 
 export default function KalkulatorPage() {

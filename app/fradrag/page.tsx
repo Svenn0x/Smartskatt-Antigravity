@@ -3,12 +3,25 @@ import FradragOrdbok from './FradragOrdbok';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Fradrags-ordbok 2025/2026 | Smartskatt',
-  description: 'Det ultimate leksikonet over norske skattefradrag. Finn ut nøyaktig hva du kan trekke fra på skatten som privatperson eller bedriftseier i 2025.',
+  title: 'Komplett liste over skattefradrag 2025/2026 | Smartskatt.no',
+  description:
+    'Lurer du på hva du kan trekke fra? Se vår alfabetiske oversikt over alle fradrag for privatpersoner og bedrifter i Norge.',
+  alternates: {
+    canonical: 'https://smartskatt.no/fradrag',
+  },
   openGraph: {
-    title: 'Fradrags-ordbok 2025/2026 | Smartskatt',
-    description: 'Det ultimate leksikonet over norske skattefradrag. Finn ut nøyaktig hva du kan trekke fra på skatten som privatperson eller bedriftseier i 2025.',
-  }
+    title: 'Spar penger på skatten med Smartskatt.no',
+    description:
+      'Lurer du på hva du kan trekke fra? Se vår alfabetiske oversikt over alle fradrag for privatpersoner og bedrifter i Norge.',
+    url: 'https://smartskatt.no/fradrag',
+    images: [{ url: '/og-social.png', width: 1200, height: 630, alt: 'Spar penger på skatten med Smartskatt.no' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Komplett liste over skattefradrag 2025/2026 | Smartskatt.no',
+    description: 'Alfabetisk oversikt over alle fradrag for privatpersoner og bedrifter i Norge.',
+    images: ['/og-social.png'],
+  },
 };
 
 export default function FradragPage() {

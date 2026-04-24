@@ -1,4 +1,27 @@
+import type { Metadata } from 'next';
 import WizardForm from '@/components/veiviser/WizardForm';
+
+export const metadata: Metadata = {
+  title: 'Skatteveiviser – Finn dine fradrag på 2 minutter',
+  description:
+    'Svar på noen enkle spørsmål og finn skattefradragene du har krav på. Gratis og tilpasset norske skatteregler for 2025/2026.',
+  alternates: {
+    canonical: 'https://smartskatt.no/veiviser',
+  },
+  openGraph: {
+    title: 'Skatteveiviser – Finn dine fradrag på 2 minutter | Smartskatt',
+    description:
+      'Svar på noen enkle spørsmål og finn skattefradragene du har krav på. Gratis og tilpasset norske skatteregler for 2025/2026.',
+    url: 'https://smartskatt.no/veiviser',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Smartskatt Skatteveiviser' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Skatteveiviser – Finn dine fradrag på 2 minutter | Smartskatt',
+    description: 'Finn skattefradragene du har krav på. Gratis og tilpasset norske skatteregler.',
+    images: ['/og-default.png'],
+  },
+};
 
 export default function VeiviserPage() {
   return (

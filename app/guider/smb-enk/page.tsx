@@ -1,4 +1,27 @@
+import type { Metadata } from 'next';
 import AffiliateButton from '@/components/shared/AffiliateButton';
+
+export const metadata: Metadata = {
+  title: 'Skatt for SMB og ENK 2026 – Alle fradragene du har krav på',
+  description:
+    'Komplett skatteguide for enkeltpersonforetak (ENK) og SMB i 2025/2026. Hjemmekontor, bilbruk, telefon og SkatteFUNN forklart enkelt.',
+  alternates: {
+    canonical: 'https://smartskatt.no/guider/smb-enk',
+  },
+  openGraph: {
+    title: 'Skatt for SMB og ENK 2026 | Smartskatt',
+    description:
+      'Hjemmekontor, bilbruk, telefon og SkatteFUNN forklart enkelt for deg som driver ENK eller SMB.',
+    url: 'https://smartskatt.no/guider/smb-enk',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'ENK og SMB skatteguide 2026 | Smartskatt' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Skatt for SMB og ENK 2026 | Smartskatt',
+    description: 'Alle fradragene for hjemmekontor, bil, telefon og SkatteFUNN for ENK i 2025/2026.',
+    images: ['/og-default.png'],
+  },
+};
 
 export default function SmbGuidePage() {
   return (

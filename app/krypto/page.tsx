@@ -1,9 +1,27 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import AffiliateCard from '@/components/shared/AffiliateCard';
 
-export const metadata = {
-  title: 'Kryptoskatten 2025: Unngå formuesskatte-fellen | Smartskatt',
-  description: 'Guide for kryptovaluta og formuesskatt 2025. Lær hvordan du unngår fellene.',
+export const metadata: Metadata = {
+  title: 'Kryptoskatten 2026: Unngå formuesskatte-fellen',
+  description:
+    'Guide for kryptovaluta og formuesskatt 2025/2026. Lær om 22% fradrag for tap, gevinster og hvordan unngå formuesskattfellen med krypto.',
+  alternates: {
+    canonical: 'https://smartskatt.no/krypto',
+  },
+  openGraph: {
+    title: 'Kryptoskatten 2026: Unngå formuesskatte-fellen | Smartskatt',
+    description:
+      'Lær om 22% fradrag for tap, gevinster og formuesskatt på kryptovaluta i 2025/2026.',
+    url: 'https://smartskatt.no/krypto',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Kryptoskatt 2026 | Smartskatt' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kryptoskatten 2026 | Smartskatt',
+    description: 'Lær om 22% fradrag for tap og unngå formuesskattfellen med krypto.',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function KryptoPage() {

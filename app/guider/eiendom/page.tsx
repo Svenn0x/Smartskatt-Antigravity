@@ -1,4 +1,27 @@
+import type { Metadata } from 'next';
 import AffiliateButton from '@/components/shared/AffiliateButton';
+
+export const metadata: Metadata = {
+  title: 'Eiendom og Utleie – Skattefradrag for boligeiere 2026',
+  description:
+    'Guide til skattefradrag for eiendom og utleie. Lær om fradrag for vedlikehold, tap ved salg og hva som er skattepliktig utleieinntekt i 2025/2026.',
+  alternates: {
+    canonical: 'https://smartskatt.no/guider/eiendom',
+  },
+  openGraph: {
+    title: 'Eiendom og Utleie – Skattefradrag for boligeiere 2026 | Smartskatt',
+    description:
+      'Fradrag for vedlikehold, tap ved salg og skattefri utleie. Komplett guide for 2025/2026.',
+    url: 'https://smartskatt.no/guider/eiendom',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Eiendom og Utleie | Smartskatt' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Eiendom og Utleie – Skattefradrag 2026 | Smartskatt',
+    description: 'Fradrag for vedlikehold, tap ved salg og skattefri utleie i 2025/2026.',
+    images: ['/og-default.png'],
+  },
+};
 
 export default function EiendomGuidePage() {
   return (

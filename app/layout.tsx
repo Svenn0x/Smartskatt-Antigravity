@@ -6,11 +6,71 @@ import Footer from '@/components/shared/Footer';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
+const SITE_URL = 'https://smartskatt.no';
+
 export const metadata: Metadata = {
-  title: 'Smartskatt.no - Finn dine glemte skattefradrag | Oppdatert for 2026',
-  description: 'Vi oversetter komplekse norske skatteregler til enkle sparegrep. Bruk vår skatteveiviser for å finne fradrag du har krav på.',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Smartskatt | Finn dine glemte skattefradrag (Oppdatert 2026)',
+    template: '%s | Smartskatt.no',
+  },
+  description:
+    'Ikke betal mer skatt enn du må. Prøv vår gratis skatteveiviser og finn fradragene som sparer deg for tusenvis av kroner. Enkelt og anonymt.',
+  keywords: [
+    'skattefradrag',
+    'skattekalkulator',
+    'norsk skatt 2025',
+    'skatteveiviser',
+    'reisefradrag',
+    'kryptoskatt',
+    'ENK fradrag',
+    'skatteoptimalisering',
+  ],
+  authors: [{ name: 'Smartskatt.no', url: SITE_URL }],
+  creator: 'Smartskatt.no',
+  publisher: 'Smartskatt.no',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'nb_NO',
+    url: SITE_URL,
+    siteName: 'Smartskatt.no',
+    title: 'Spar penger på skatten med Smartskatt.no',
+    description:
+      'Ikke betal mer skatt enn du må. Finn fradragene som sparer deg for tusenvis av kroner. Gratis og anonymt.',
+    images: [
+      {
+        url: '/og-social.png',
+        width: 1200,
+        height: 630,
+        alt: 'Spar penger på skatten med Smartskatt.no',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Spar penger på skatten med Smartskatt.no',
+    description:
+      'Ikke betal mer skatt enn du må. Finn fradragene som sparer deg for tusenvis av kroner. Gratis og anonymt.',
+    images: ['/og-social.png'],
+    creator: '@smartskattno',
+  },
   icons: {
     icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
   },
 };
 

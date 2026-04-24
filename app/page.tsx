@@ -1,5 +1,28 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import DidYouKnow from '@/components/DidYouKnow';
+
+export const metadata: Metadata = {
+  title: 'Smartskatt | Finn dine glemte skattefradrag (Oppdatert 2026)',
+  description:
+    'Ikke betal mer skatt enn du må. Prøv vår gratis skatteveiviser og finn fradragene som sparer deg for tusenvis av kroner. Enkelt og anonymt.',
+  alternates: {
+    canonical: 'https://smartskatt.no',
+  },
+  openGraph: {
+    title: 'Spar penger på skatten med Smartskatt.no',
+    description:
+      'Ikke betal mer skatt enn du må. Finn fradragene som sparer deg for tusenvis av kroner. Gratis og anonymt.',
+    url: 'https://smartskatt.no',
+    images: [{ url: '/og-social.png', width: 1200, height: 630, alt: 'Spar penger på skatten med Smartskatt.no' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Spar penger på skatten med Smartskatt.no',
+    description: 'Ikke betal mer skatt enn du må. Finn fradragene som sparer deg for tusenvis av kroner.',
+    images: ['/og-social.png'],
+  },
+};
 
 export default function Home() {
   return (

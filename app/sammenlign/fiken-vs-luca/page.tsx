@@ -3,9 +3,26 @@ import { CheckCircle2, Star, XCircle, ArrowRight, TrendingUp, Zap, Target, Smart
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Fiken eller Luca? Beste regnskapsprogram for ENK 2026',
-  description: 'Fiken vs Luca Regnskap: Vi sammenligner pris, brukervennlighet og funksjoner for enkeltpersonforetak (ENK) i 2026. Finn ut hvilket program som er best for deg.',
+  title: 'Fiken eller Luca? Se priser og funksjoner (2026 Test)',
+  description:
+    'Skal du velge Fiken eller Luca Regnskap for ditt ENK? Vi sammenligner priser, brukervennlighet og funksjoner for å hjelpe deg å velge riktig.',
   keywords: ['Fiken eller Luca', 'beste regnskapsprogram ENK', 'Luca Regnskap erfaringer', 'Fiken erfaringer', 'regnskapsprogram sammenligning', 'ENK skatt 2026'],
+  alternates: {
+    canonical: 'https://smartskatt.no/sammenlign/fiken-vs-luca',
+  },
+  openGraph: {
+    title: 'Spar penger på skatten med Smartskatt.no',
+    description:
+      'Skal du velge Fiken eller Luca Regnskap for ditt ENK? Vi sammenligner priser, brukervennlighet og funksjoner for å hjelpe deg å velge riktig.',
+    url: 'https://smartskatt.no/sammenlign/fiken-vs-luca',
+    images: [{ url: '/og-social.png', width: 1200, height: 630, alt: 'Spar penger på skatten med Smartskatt.no' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fiken eller Luca? Se priser og funksjoner (2026 Test)',
+    description: 'Vi sammenligner Fiken og Luca Regnskap for ENK – priser, funksjoner og brukervennlighet.',
+    images: ['/og-social.png'],
+  },
 };
 
 export default function FikenVsLucaPage() {
