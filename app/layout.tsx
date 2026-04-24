@@ -83,6 +83,26 @@ export default function RootLayout({
   return (
     <html lang="no" className={`${inter.variable} scroll-smooth`}>
       <head>
+        {/* iubenda Cookie Solution */}
+        <Script id="iubenda-config" strategy="beforeInteractive">
+          {`
+            var _iub = _iub || [];
+            _iub.csConfiguration = {"siteId":4509385,"cookiePolicyId":29355541,"lang":"no","storage":{"useSiteId":true}};
+          `}
+        </Script>
+        <Script
+          src="https://cs.iubenda.com/autoblocking/4509385.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          src="//cdn.iubenda.com/cs/gpp/stub.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          src="//cdn.iubenda.com/cs/iubenda_cs.js"
+          strategy="afterInteractive"
+        />
+
         {/* Google Tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-RJLVB3NSN8"
