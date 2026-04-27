@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/shared/Navbar';
@@ -83,17 +84,6 @@ export default function RootLayout({
   return (
     <html lang="no" className={`${inter.variable} scroll-smooth`}>
       <head>
-        {/* Google Tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJLVB3NSN8"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-RJLVB3NSN8');
-          `
-        }} />
         {/* Midlertidig deaktivert Iubenda for Google Tag-verifisering */}
         {/*
         <Script id="iubenda-config" strategy="beforeInteractive">
@@ -117,6 +107,7 @@ export default function RootLayout({
         */}
       </head>
       <body className="min-h-screen flex flex-col font-sans text-slate-900 bg-slate-50 antialiased relative selection:bg-blue-200 selection:text-blue-900">
+        <GoogleAnalytics gaId="G-RJLVB3NSN8" />
         {/* Premium Background Elements */}
         <div className="absolute inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
           <div className="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(37,99,235,0.15),rgba(255,255,255,0))]"></div>
