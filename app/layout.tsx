@@ -95,7 +95,8 @@ export default function RootLayout({
           `
         }} />
 
-        {/* iubenda Cookie Solution */}
+        {/* Midlertidig deaktivert Iubenda for Google Tag-verifisering */}
+        {/*
         <Script id="iubenda-config" strategy="beforeInteractive">
           {`
             var _iub = _iub || [];
@@ -114,6 +115,7 @@ export default function RootLayout({
           src="//cdn.iubenda.com/cs/iubenda_cs.js"
           strategy="afterInteractive"
         />
+        */}
       </head>
       <body className="min-h-screen flex flex-col font-sans text-slate-900 bg-slate-50 antialiased relative selection:bg-blue-200 selection:text-blue-900">
         {/* Premium Background Elements */}
