@@ -47,12 +47,12 @@ export default function ComparisonBox() {
         <div className="p-6 flex flex-col h-full hover:bg-slate-50/50 transition-colors">
           <div className="flex-grow">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center font-bold text-blue-700 text-xl shadow-sm">
+              <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center font-bold text-cyan-700 text-xl shadow-sm">
                 L
               </div>
               <div>
                 <h4 className="font-bold text-slate-900 text-lg">Luca</h4>
-                <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide bg-blue-50 px-2 py-0.5 rounded">Utfordreren</span>
+                <span className="text-xs font-semibold text-secondary uppercase tracking-wide bg-cyan-50 px-2 py-0.5 rounded">Utfordreren</span>
               </div>
             </div>
             <p className="text-slate-600 text-sm mb-6 leading-relaxed">
@@ -63,7 +63,7 @@ export default function ComparisonBox() {
             href={lucaUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full inline-flex justify-center items-center gap-2 bg-white border-2 border-slate-200 hover:border-blue-500 hover:text-blue-700 text-slate-700 font-medium py-3 px-4 rounded-xl transition-all shadow-sm"
+            className="w-full inline-flex justify-center items-center gap-2 bg-white border-2 border-slate-200 hover:border-secondary hover:text-secondary text-slate-700 font-medium py-3 px-4 rounded-xl transition-all shadow-sm"
           >
             Sjekk Luca
             <ArrowRight className="w-4 h-4" />

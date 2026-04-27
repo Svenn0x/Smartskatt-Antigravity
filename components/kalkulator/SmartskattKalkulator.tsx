@@ -160,7 +160,7 @@ export default function SmartskattKalkulator() {
                   onClick={() => setArbeidstype('ansatt')}
                   className={`flex-1 py-4 px-4 rounded-xl border font-medium transition-all active:scale-[0.98] ${
                     arbeidstype === 'ansatt'
-                      ? 'bg-blue-50 border-blue-500 text-blue-700 shadow-sm'
+                      ? 'bg-cyan-50 border-secondary text-cyan-700 shadow-sm'
                       : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
                   }`}
                 >
@@ -171,7 +171,7 @@ export default function SmartskattKalkulator() {
                   onClick={() => setArbeidstype('bedrift/ENK')}
                   className={`flex-1 py-4 px-4 rounded-xl border font-medium transition-all active:scale-[0.98] ${
                     arbeidstype === 'bedrift/ENK'
-                      ? 'bg-blue-50 border-blue-500 text-blue-700 shadow-sm'
+                      ? 'bg-cyan-50 border-secondary text-cyan-700 shadow-sm'
                       : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
                   }`}
                 >
@@ -302,7 +302,7 @@ export default function SmartskattKalkulator() {
                 <label className="block text-sm font-semibold text-slate-700">
                   Reisevei til jobb (en vei)
                 </label>
-                <span className="text-blue-600 font-bold bg-blue-100 px-3 py-1 rounded-full text-sm">
+                <span className="text-secondary font-bold bg-cyan-100 px-3 py-1 rounded-full text-sm">
                   {reiseKm} km
                 </span>
               </div>
@@ -312,7 +312,7 @@ export default function SmartskattKalkulator() {
                 max="200"
                 value={reiseKm}
                 onChange={(e) => setReiseKm(Number(e.target.value))}
-                className="w-full h-4 md:h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                className="w-full h-4 md:h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-secondary"
               />
               <div className="flex justify-between text-xs text-slate-500 font-medium">
                 <span>0 km</span>
@@ -325,14 +325,14 @@ export default function SmartskattKalkulator() {
         {/* 2. The Magic Box (Resultater) */}
         <div className="w-full lg:w-5/12 space-y-6 sticky top-24">
           <div className="bg-slate-900 rounded-2xl p-8 text-white shadow-xl relative overflow-hidden group border border-slate-800">
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all duration-700"></div>
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl group-hover:bg-secondary/20 transition-all duration-700"></div>
             
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-6">Ditt Skatteestimat</h3>
             
             <div className="space-y-6 relative z-10">
               <div>
                 <span className="block text-lg font-medium text-slate-300 mb-2">Potensiell skattebesparelse</span>
-                <div className="text-5xl font-extrabold text-emerald-400 drop-shadow-md">
+                <div className="text-5xl font-extrabold text-secondary drop-shadow-md">
                   {formatKr(resultater.totalBesparelse)}
                 </div>
               </div>
@@ -462,13 +462,13 @@ function LeadCapture({ kalkulatorData }: { kalkulatorData: any }) {
   }
 
   return (
-    <div className="w-full bg-blue-50/80 border border-blue-100 rounded-3xl p-6 md:p-12 relative overflow-hidden shadow-sm">
+    <div className="w-full bg-cyan-50/80 border border-cyan-100 rounded-3xl p-6 md:p-12 relative overflow-hidden shadow-sm">
       {/* Glow / Premium effect */}
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-400/20 blur-3xl rounded-full pointer-events-none"></div>
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-emerald-400/10 blur-3xl rounded-full pointer-events-none"></div>
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-secondary/20 blur-3xl rounded-full pointer-events-none"></div>
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary/10 blur-3xl rounded-full pointer-events-none"></div>
       
       <div className="max-w-2xl mx-auto text-center relative z-10">
-        <div className="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4">
+        <div className="inline-block bg-accent text-white shadow-sm text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4">
           Gratis Bonus
         </div>
         <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">Vil du beholde oversikten?</h3>

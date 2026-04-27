@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface LogoProps {
   className?: string;
@@ -6,45 +7,17 @@ interface LogoProps {
 }
 
 export default function Logo({ className = '', variant = 'light' }: LogoProps) {
-  const textColor = variant === 'light' ? 'text-[#001A33]' : 'text-white';
+  const textColor = variant === 'light' ? 'text-primary' : 'text-white';
   
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
-      {/* Icon: Shield + S + Growth */}
-      <svg 
-        width="32" 
-        height="32" 
-        viewBox="0 0 32 32" 
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg"
-        className="flex-shrink-0 drop-shadow-sm"
-      >
-        <defs>
-          <linearGradient id="smartskatt-grad" x1="16" y1="2" x2="16" y2="31" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#2DCC70" />
-            <stop offset="1" stopColor="#27AE60" />
-          </linearGradient>
-        </defs>
-        <path 
-          d="M16 2L29 7V16C29 23.5 23.5 28.5 16 31C8.5 28.5 3 23.5 3 16V7L16 2Z" 
-          fill="url(#smartskatt-grad)" 
-        />
-        <path 
-          d="M11 24H18C19.6569 24 21 22.6569 21 21C21 19.3431 19.6569 18 18 18H14C12.3431 18 11 16.6569 11 15C11 13.3431 12.3431 12 14 12H17L21 8" 
-          stroke="white" 
-          strokeWidth="2.5" 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-        />
-        <path 
-          d="M17 8H21V12" 
-          stroke="white" 
-          strokeWidth="2.5" 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-        />
-      </svg>
-      {/* Text */}
+      <Image 
+        src="/icon.svg" 
+        alt="Smartskatt.no - Finn dine skattefradrag" 
+        width={32} 
+        height={32} 
+        className="flex-shrink-0 drop-shadow-sm" 
+      />
       <span className={`font-extrabold text-[22px] tracking-tight leading-none ${textColor}`}>
         SmartSkatt
       </span>

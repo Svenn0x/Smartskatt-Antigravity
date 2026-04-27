@@ -36,7 +36,7 @@ export default function Home() {
         
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 text-balance leading-tight">
           Ikke betal mer skatt <br className="hidden sm:block" />
-          enn <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500">du absolutt må.</span>
+          enn <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">du absolutt må.</span>
         </h1>
         
         <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-10 text-balance">
@@ -44,7 +44,7 @@ export default function Home() {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/veiviser" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 min-h-[56px] rounded-full shadow-lg shadow-blue-200 hover:shadow-blue-300 transition-all hover:-translate-y-1 active:scale-[0.98] active:translate-y-0">
+          <Link href="/veiviser" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-brand-gradient text-white font-semibold px-8 py-4 min-h-[56px] rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all hover:-translate-y-1 active:scale-[0.98] active:translate-y-0 hover:opacity-95">
             Start Skatteveiviseren
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </Link>

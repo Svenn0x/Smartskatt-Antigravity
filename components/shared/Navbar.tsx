@@ -51,7 +51,7 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden sm:flex items-center">
-            <Link href="/veiviser" className="text-sm font-semibold bg-slate-900 hover:bg-blue-600 text-white px-5 py-2.5 rounded-full transition-all hover:shadow-md hover:scale-105 active:scale-95">
+            <Link href="/veiviser" className="text-sm font-semibold bg-slate-900 hover:bg-primary text-white px-5 py-2.5 rounded-full transition-all hover:shadow-md hover:scale-105 active:scale-95">
               Skatteveiviser
             </Link>
           </div>
@@ -100,7 +100,7 @@ export default function Navbar() {
         <div className="flex justify-center pointer-events-auto">
           <Link 
             href="/veiviser" 
-            className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3.5 rounded-full shadow-lg shadow-blue-900/20 active:scale-[0.98] transition-all"
+            className="flex items-center justify-center gap-2 bg-brand-gradient text-white font-semibold px-6 py-3.5 rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-[0.98] transition-all hover:opacity-95"
           >
             Start Skatteveiviseren
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>

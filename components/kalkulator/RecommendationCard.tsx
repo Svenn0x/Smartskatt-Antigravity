@@ -20,16 +20,16 @@ export default function RecommendationCard({
 }: RecommendationCardProps) {
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm relative overflow-hidden group hover:shadow-md transition-all duration-300 flex flex-col h-full animate-in fade-in zoom-in-95 duration-500">
-      <div className="absolute top-0 left-0 w-1 h-full bg-blue-500 group-hover:bg-blue-600 transition-colors"></div>
+      <div className="absolute top-0 left-0 w-1 h-full bg-secondary group-hover:bg-cyan-600 transition-colors"></div>
       
       {/* Badge */}
-      <div className="inline-flex items-center self-start bg-blue-50 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-md uppercase tracking-wide mb-4">
+      <div className="inline-flex items-center self-start bg-cyan-50 text-secondary text-xs font-bold px-2.5 py-1 rounded-md uppercase tracking-wide mb-4">
         Anbefalt for deg
       </div>
       
       <div className="flex items-start gap-3 mb-2">
         {ikon && (
-          <div className="text-blue-600 mt-1">
+          <div className="text-secondary mt-1">
             {ikon}
           </div>
         )}
