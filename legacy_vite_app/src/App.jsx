@@ -252,8 +252,7 @@ function App() {
     <BrowserRouter>
       <nav className="container navbar">
         <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
-          <img src="/logo.png" alt="Smartskatt logo" width="32" height="32" style={{ marginRight: '8px' }} />
-          Smartskatt
+          <img src="/logo.png" alt="Smartskatt logo" width="160" height="40" style={{ objectFit: 'contain' }} />
         </Link>
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
           <Link to="/guider" style={{ color: 'var(--text-dark)', fontWeight: 500, textDecoration: 'none' }}>Skatteguider</Link>
@@ -270,9 +269,8 @@ function App() {
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
-            <div className="footer-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <img src="/logo.png" alt="Smartskatt logo" width="32" height="32" />
-              Smartskatt
+            <div className="footer-logo">
+              <img src="/logo.png" alt="Smartskatt logo" width="160" height="40" style={{ objectFit: 'contain' }} />
             </div>
             <div className="footer-links">
               <Link to="/guider">Skatteguider</Link>
