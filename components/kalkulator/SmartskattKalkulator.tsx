@@ -188,7 +188,7 @@ export default function SmartskattKalkulator() {
                 type="number"
                 value={inntekt || ''}
                 onChange={(e) => setInntekt(Number(e.target.value))}
-                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all shadow-sm font-medium text-lg"
               />
             </div>
 
@@ -201,7 +201,7 @@ export default function SmartskattKalkulator() {
                 type="number"
                 value={gjeld || ''}
                 onChange={(e) => setGjeld(Number(e.target.value))}
-                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all shadow-sm font-medium text-lg"
               />
             </div>
 
@@ -214,7 +214,7 @@ export default function SmartskattKalkulator() {
                 type="number"
                 value={formue || ''}
                 onChange={(e) => setFormue(Number(e.target.value))}
-                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all shadow-sm font-medium text-lg"
               />
             </div>
 
@@ -227,7 +227,7 @@ export default function SmartskattKalkulator() {
                 type="number"
                 value={kryptoTap || ''}
                 onChange={(e) => setKryptoTap(Number(e.target.value))}
-                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all shadow-sm font-medium text-lg"
               />
             </div>
 
@@ -240,7 +240,7 @@ export default function SmartskattKalkulator() {
                 type="number"
                 value={kryptoGevinst || ''}
                 onChange={(e) => setKryptoGevinst(Number(e.target.value))}
-                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all shadow-sm font-medium text-lg"
               />
             </div>
 
@@ -253,7 +253,7 @@ export default function SmartskattKalkulator() {
                 type="number"
                 value={utleieInntekt || ''}
                 onChange={(e) => setUtleieInntekt(Number(e.target.value))}
-                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all shadow-sm font-medium text-lg"
               />
             </div>
 
@@ -266,7 +266,7 @@ export default function SmartskattKalkulator() {
                 type="number"
                 value={fagforening || ''}
                 onChange={(e) => setFagforening(Number(e.target.value))}
-                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all shadow-sm font-medium text-lg"
               />
             </div>
 
@@ -279,7 +279,7 @@ export default function SmartskattKalkulator() {
                 type="number"
                 value={antallBarn || ''}
                 onChange={(e) => setAntallBarn(Number(e.target.value))}
-                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all shadow-sm font-medium text-lg"
               />
             </div>
 
@@ -292,7 +292,7 @@ export default function SmartskattKalkulator() {
                 type="number"
                 value={gaver || ''}
                 onChange={(e) => setGaver(Number(e.target.value))}
-                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm font-medium text-lg"
+                className="w-full px-4 py-4 min-h-[56px] bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all shadow-sm font-medium text-lg"
               />
             </div>
 
@@ -450,8 +450,8 @@ function LeadCapture({ kalkulatorData }: { kalkulatorData: any }) {
 
   if (status === 'success') {
     return (
-      <div className="w-full bg-blue-50/50 border border-blue-100 rounded-3xl p-6 md:p-12 relative overflow-hidden flex flex-col items-center justify-center text-center min-h-[300px]">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-400/10 blur-3xl rounded-full pointer-events-none"></div>
+      <div className="w-full bg-cyan-50/50 border border-cyan-100 rounded-3xl p-6 md:p-12 relative overflow-hidden flex flex-col items-center justify-center text-center min-h-[300px]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-cyan-400/10 blur-3xl rounded-full pointer-events-none"></div>
         <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-6 shadow-sm animate-bounce">
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
         </div>
@@ -482,7 +482,7 @@ function LeadCapture({ kalkulatorData }: { kalkulatorData: any }) {
             value={email}
             onChange={handleEmailChange}
             placeholder="Din e-post..."
-            className="flex-1 px-5 py-4 min-h-[56px] bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all shadow-sm text-lg"
+            className="flex-1 px-5 py-4 min-h-[56px] bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all shadow-sm text-lg"
             required
             disabled={status === 'loading'}
           />

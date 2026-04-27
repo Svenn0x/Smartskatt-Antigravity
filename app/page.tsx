@@ -29,8 +29,8 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center w-full pb-24">
       {/* Hero Section */}
       <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-24 pb-16 text-center lg:pt-32 lg:pb-24 animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium mb-8">
-          <span className="flex h-2 w-2 rounded-full bg-blue-600"></span>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-sm font-medium mb-8">
+          <span className="flex h-2 w-2 rounded-full bg-accent"></span>
           Oppdatert med skatteregler for 2026
         </div>
         
@@ -106,10 +106,10 @@ function GuideCard({ title, href, description, icon, color }: { title: string; h
       <div className="flex items-center justify-center w-12 h-12 bg-slate-50 text-2xl rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300 border border-slate-100 shadow-sm">
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{title}</h3>
+      <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-secondary transition-colors">{title}</h3>
       <p className="text-sm text-slate-600 leading-relaxed">{description}</p>
       
-      <div className="mt-6 flex items-center text-sm font-medium text-blue-600 opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0">
+      <div className="mt-6 flex items-center text-sm font-medium text-secondary opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0">
         Les guiden
         <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
       </div>
