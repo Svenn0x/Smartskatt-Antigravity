@@ -83,6 +83,18 @@ export default function RootLayout({
   return (
     <html lang="no" className={`${inter.variable} scroll-smooth`}>
       <head>
+        {/* Google Tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJLVB3NSN8"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-RJLVB3NSN8');
+          `
+        }} />
+
         {/* iubenda Cookie Solution */}
         <Script id="iubenda-config" strategy="beforeInteractive">
           {`
@@ -102,18 +114,6 @@ export default function RootLayout({
           src="//cdn.iubenda.com/cs/iubenda_cs.js"
           strategy="afterInteractive"
         />
-
-        {/* Google Tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJLVB3NSN8"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-RJLVB3NSN8');
-          `
-        }} />
       </head>
       <body className="min-h-screen flex flex-col font-sans text-slate-900 bg-slate-50 antialiased relative selection:bg-blue-200 selection:text-blue-900">
         {/* Premium Background Elements */}
