@@ -104,19 +104,16 @@ export default function RootLayout({
         />
 
         {/* Google Tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-RJLVB3NSN8"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJLVB3NSN8"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'G-RJLVB3NSN8');
-          `}
-        </Script>
+          `
+        }} />
       </head>
       <body className="min-h-screen flex flex-col font-sans text-slate-900 bg-slate-50 antialiased relative selection:bg-blue-200 selection:text-blue-900">
         {/* Premium Background Elements */}
