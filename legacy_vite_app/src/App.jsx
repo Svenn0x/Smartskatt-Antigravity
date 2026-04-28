@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './index.css';
-import DeductionWizard from './components/DeductionWizard';
+
+const DeductionWizard = lazy(() => import('./components/DeductionWizard'));
+const Guides = lazy(() => Promise.resolve({ default: GuidesComponent }));
+const GuideArticle = lazy(() => Promise.resolve({ default: GuideArticleComponent }));
 
 // SVG Icons
 const SearchIcon = () => (
@@ -63,7 +66,7 @@ function Home() {
             </button>
           </div>
           <div className="hero-image-wrapper">
-            <img src="/hero.png" alt="Smartskatt plattform illustrasjon" />
+            <img src="/hero.webp" alt="Smartskatt plattform illustrasjon" width="800" height="600" loading="eager" fetchpriority="high" />
           </div>
         </div>
       </section>
@@ -104,7 +107,9 @@ function Home() {
       {/* NEW: Deduction Wizard */}
       <section className="section-padding" style={{ backgroundColor: '#f0f5fa' }}>
         <div className="container">
-          <DeductionWizard />
+          <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Laster veiviser...</div>}>
+            <DeductionWizard />
+          </Suspense>
         </div>
       </section>
 
@@ -173,7 +178,7 @@ function Home() {
   );
 }
 
-function Guides() {
+function GuidesComponent() {
   const articles = [
     { id: 'krypto-fellen', title: 'Unngå den usynlige krypto-fellen i 2025', tag: 'Krypto' },
     { id: 'smb-fradrag', title: 'De glemte fradragene for småbedrifter', tag: 'Bedrift' },
@@ -204,7 +209,7 @@ function Guides() {
   );
 }
 
-function GuideArticle() {
+function GuideArticleComponent() {
   return (
     <div className="container section-padding" style={{ maxWidth: '800px' }}>
       <Link to="/guider" style={{ display: 'inline-block', marginBottom: '2rem', color: 'var(--text-gray)' }}>← Tilbake til guider</Link>
@@ -252,7 +257,7 @@ function App() {
     <BrowserRouter>
       <nav className="container navbar">
         <Link to="/" className="logo" style={{ textDecoration: 'none' }}>
-          <img src="/logo.png" alt="Smartskatt logo" width="160" height="40" style={{ objectFit: 'contain' }} />
+          <img src="/logo.webp" alt="Smartskatt logo" width="160" height="40" loading="eager" fetchpriority="high" style={{ objectFit: 'contain' }} />
         </Link>
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
           <Link to="/guider" style={{ color: 'var(--text-dark)', fontWeight: 500, textDecoration: 'none' }}>Skatteguider</Link>
@@ -260,17 +265,19 @@ function App() {
         </div>
       </nav>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/guider" element={<Guides />} />
-        <Route path="/guide/:id" element={<GuideArticle />} />
-      </Routes>
+      <Suspense fallback={<div style={{textAlign: 'center', padding: '4rem'}}>Laster side...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/guider" element={<Guides />} />
+          <Route path="/guide/:id" element={<GuideArticle />} />
+        </Routes>
+      </Suspense>
 
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
             <div className="footer-logo">
-              <img src="/logo.png" alt="Smartskatt logo" width="160" height="40" style={{ objectFit: 'contain' }} />
+              <img src="/logo.webp" alt="Smartskatt logo" width="160" height="40" loading="lazy" style={{ objectFit: 'contain' }} />
             </div>
             <div className="footer-links">
               <Link to="/guider">Skatteguider</Link>
