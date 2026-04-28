@@ -22,7 +22,15 @@
         src: local('Inter'), local('Inter-Regular'), url('/fonts/inter-subset.woff2') format('woff2');
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
       }
-      :root { --primary-blue: #004A99; --primary-blue-dark: #003670; --secondary-green: #2ECC71; --secondary-green-hover: #27ae60; --bg-white: #FFFFFF; --bg-light-gray: #F9FAFB; --text-dark: #1F2937; --text-gray: #4B5563; --border-color: #E5E7EB; --font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+      @font-face {
+        font-family: 'Inter-fallback';
+        src: local('Arial');
+        size-adjust: 104.5%;
+        ascent-override: 90%;
+        descent-override: 22.5%;
+        line-gap-override: 0%;
+      }
+      :root { --primary-blue: #004A99; --primary-blue-dark: #003670; --secondary-green: #2ECC71; --secondary-green-hover: #27ae60; --bg-white: #FFFFFF; --bg-light-gray: #F9FAFB; --text-dark: #1F2937; --text-gray: #4B5563; --border-color: #E5E7EB; --font-family: 'Inter', 'Inter-fallback', system-ui, -apple-system, sans-serif; }
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body { font-family: var(--font-family); color: var(--text-dark); background-color: var(--bg-white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
       h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.2; color: var(--primary-blue); }

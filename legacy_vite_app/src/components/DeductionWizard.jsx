@@ -11,8 +11,22 @@ export default function DeductionWizard() {
   });
 
   const handleAnswer = (key, value) => {
-    setAnswers(prev => ({ ...prev, [key]: value }));
+    // Critical UI update - processed instantly
     setStep(prev => prev + 1);
+
+    // Non-critical background data processing
+    const processData = () => {
+      setAnswers(prev => ({ ...prev, [key]: value }));
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'wizard_answer', key, value });
+      }
+    };
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(processData);
+    } else {
+      setTimeout(processData, 0);
+    }
   };
 
   const questions = [
