@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Home, Download, FileText, Check } from 'lucide-react';
+import DeductionWizard from '@/components/kalkulator/DeductionWizard';
 
 export const metadata: Metadata = {
   title: 'Utleie av egen bolig: Airbnb, Regler og Skatt (2026)',
@@ -42,10 +43,10 @@ export default function UtleieEgenBoligPage() {
           <span>Dypdykk: Utleie og Airbnb</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
-          Utleie av egen bolig: Regler for skattefri inntekt
+          Hvor mye kan du leie ut skattefritt i 2026? Her er fasiten. ✌️
         </h1>
         <p className="text-xl text-slate-600 max-w-2xl leading-relaxed">
-          Leier du ut hele eller deler av hjemmet ditt? Avhengig av omfanget kan inntekten være 100% skattefri eller beskattes med 22%.
+          Leier du ut kåken, en kjellerleilighet eller kanskje hytta? La oss droppe stammespråket og se nøyaktig når du kan stikke hele leieinntekten rett i lomma (100 % skattefritt), og når Skatteetaten vil ha sin del (22 %).
         </p>
       </header>
 
@@ -56,14 +57,14 @@ export default function UtleieEgenBoligPage() {
         </div>
         <h3 className="text-xl font-bold text-amber-900 mt-0 mb-2">Visste du dette? (Pro-tip om møblert utleie)</h3>
         <p className="text-amber-800 text-base mb-0">
-          Leier du ut <strong>skattepliktig</strong> og boligen er møblert? Du kan kreve et årlig "møbelsjablong-fradrag" på hele 15 % av brutto leieinntekt! Dette er et fradrag mange glemmer å føre, og det erstatter faktiske utgifter til vedlikehold/utskifting av møbler for å gjøre det enklere.
+          Leier du ut <strong>skattepliktig</strong> og boligen er møblert? Da kan du kreve et årlig "møbelsjablong-fradrag" på hele 15 % av brutto leieinntekt! Det er et digg fradrag mange rett og slett glemmer å føre. Det erstatter faktiske utgifter til vedlikehold av møbler, så du slipper å ta vare på hver minste kvittering fra IKEA.
         </p>
       </div>
 
       <article className="prose prose-slate prose-lg max-w-none prose-a:text-indigo-600 prose-headings:text-slate-900">
-        <h2>Langtidsutleie: Halvparten-regelen vs. 20.000-kronersregelen</h2>
+        <h2>Langtidsutleie: Halvparten-regelen vs. 20.000-kronersregelen 🤓</h2>
         <p>
-          Skattereglene for utleie av boligen du bor i selv, styres primært av hvor stor andel av boligen du leier ut, målt etter <em>leieverdi</em> (hva delen kunne vært leid ut for på det åpne markedet).
+          Når du leier ut boligen du selv bor i, er det én ting som gjelder: Hvor mye av boligen bruker du selv? (Og vi snakker om <em>leieverdi</em> – hva man kunne fått for det på det åpne markedet, ikke antall kvadratmeter).
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
@@ -83,32 +84,38 @@ export default function UtleieEgenBoligPage() {
 
         <hr className="my-10" />
 
-        <h2 id="airbnb">Airbnb-spesial: Korttidsutleie i 2026</h2>
+        <h2 id="airbnb">Airbnb-spesial: Slik funker korttidsutleie i 2026 🏖️</h2>
         <p>
-          Lover og regler for korttidsutleie (utleie i under 30 dager per leieforhold) har blitt strengere de siste årene. Enten du leier ut hele boligen mens du er på ferie, eller et rom i huset ditt, gjelder følgende "sjablongregel" for 2026:
+          Korttidsutleie (under 30 dager per gjest) har fått sine egne, litt strengere regler. Men fortvil ikke! Enten du leier ut hele boligen mens du er på ferie i Spania, eller låner ut et rom, gjelder denne "sjablongregelen" for 2026:
         </p>
         
-        <div className="bg-white border-2 border-indigo-100 p-8 rounded-2xl shadow-sm mb-8">
-          <h3 className="text-2xl font-bold text-indigo-900 mt-0 mb-4">Skatteformelen for Airbnb</h3>
+        <div className="bg-white border-2 border-indigo-100 p-8 rounded-2xl shadow-sm mb-6">
+          <h3 className="text-2xl font-bold text-indigo-900 mt-0 mb-4">Airbnb-formelen på 1-2-3 🧮</h3>
           <ul className="space-y-3 m-0">
             <li className="flex items-center text-slate-700">
               <Check className="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0" />
-              <span>De første <strong>10.000 kr</strong> er 100% skattefrie.</span>
+              <span>De første <strong>10.000 kr</strong> du tjener er 100 % skattefrie. Kos deg! 🎉</span>
             </li>
             <li className="flex items-center text-slate-700">
               <Check className="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0" />
-              <span>Av beløpet <em>over</em> 10.000 kr, regnes <strong>85 %</strong> som skattepliktig kapitalinntekt.</span>
+              <span>Av beløpet <em>over</em> 10.000 kr, regnes bare <strong>85 %</strong> som skattepliktig inntekt.</span>
             </li>
             <li className="flex items-center text-slate-700">
               <Check className="w-5 h-5 text-emerald-500 mr-2 flex-shrink-0" />
-              <span>Kapitalinntekten beskattes med <strong>22 %</strong>.</span>
+              <span>Denne inntekten skatter du vanlig <strong>22 %</strong> av.</span>
             </li>
           </ul>
         </div>
 
+        <div className="bg-blue-50 border border-blue-200 p-6 rounded-2xl mb-8">
+          <p className="text-blue-900 font-bold mb-1 mt-0">Kompis-tips! 😉</p>
+          <p className="text-blue-800 text-sm mb-0">Husk at du kan trekke fra annonseutgifter på Airbnb også! Ting du betaler direkte for å få leid ut, som plattformgebyrer eller fotografering, kan føres som fradrag dersom du leier ut over fribeløpet.</p>
+        </div>
         <p>
           <em>Viktig:</em> Fribeløpet på 10.000 kr gjelder per bolig per år, ikke per leietaker. Skatteetaten mottar i de fleste tilfeller opplysninger direkte fra plattformer som Airbnb og Booking.com, så informasjonen ligger ofte forhåndsutfylt.
         </p>
+
+        <DeductionWizard />
 
         {/* Konverteringspunkt: Lure */}
         <section className="bg-gradient-to-br from-slate-900 to-indigo-900 text-white p-8 md:p-10 rounded-3xl my-12 text-center shadow-2xl relative overflow-hidden">
