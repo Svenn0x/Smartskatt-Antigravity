@@ -59,7 +59,7 @@ export default function UtleieGuidePage() {
                 <td className="px-6 py-4 font-medium text-slate-900">Langtidsutleie (over 30 dager)</td>
                 <td className="px-6 py-4">Skattefritt (Ubegrenset)</td>
                 <td className="px-6 py-4">Ingen skatt</td>
-                <td className="px-6 py-4 text-slate-500">Du bruker >50% av boligens leieverdi selv</td>
+                <td className="px-6 py-4 text-slate-500">Du bruker {'>'}50% av boligens leieverdi selv</td>
               </tr>
               <tr className="hover:bg-slate-50 transition-colors">
                 <td className="px-6 py-4 font-medium text-slate-900">Langtidsutleie (Hele boligen)</td>

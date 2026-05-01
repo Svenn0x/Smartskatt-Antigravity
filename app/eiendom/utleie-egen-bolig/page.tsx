@@ -44,13 +44,13 @@ export default function UtleieEgenBoligPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
           <div className="bg-emerald-50 border border-emerald-200 p-6 rounded-2xl">
-            <h3 className="text-xl font-bold text-emerald-900 mt-0 mb-3">Du bruker > 50 % selv</h3>
+            <h3 className="text-xl font-bold text-emerald-900 mt-0 mb-3">Du bruker {'>'} 50 % selv</h3>
             <p className="text-emerald-800 text-sm mb-0">
               Hvis du bor i boligen og bruker minst halvparten av boligens leieverdi til eget bruk, er <strong>hele leieinntekten 100% skattefri</strong>, uansett hvor høy den er. Du trenger ikke føre dette i skattemeldingen.
             </p>
           </div>
           <div className="bg-amber-50 border border-amber-200 p-6 rounded-2xl">
-            <h3 className="text-xl font-bold text-amber-900 mt-0 mb-3">Du leier ut > 50 %</h3>
+            <h3 className="text-xl font-bold text-amber-900 mt-0 mb-3">Du leier ut {'>'} 50 %</h3>
             <p className="text-amber-800 text-sm mb-0">
               Leier du ut mer enn halvparten, slår <strong>20.000-kronersregelen</strong> inn. Leieinntekten er kun skattefri opp til 20.000 kr i løpet av inntektsåret. Tjener du f.eks. 21.000 kr, blir <em>hele</em> beløpet (fra første krone) skattepliktig med 22%.
             </p>
