@@ -38,7 +38,7 @@ export default function Navbar() {
               <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-slate-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex flex-col overflow-hidden">
                 <Link href="/krypto" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary">Krypto</Link>
                 <Link href="/bedrift" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary border-t border-slate-50">Bedrift</Link>
-                <Link href="/bolig" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary border-t border-slate-50">Bolig</Link>
+                <Link href="/eiendom" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary border-t border-slate-50">Bolig</Link>
               </div>
             </div>
             <Link href="/fradrag" className="text-sm font-medium text-slate-600 hover:text-secondary transition-colors py-2 active:scale-95">
@@ -79,7 +79,7 @@ export default function Navbar() {
                 <div className="space-y-1">
                   <Link href="/krypto" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary active:bg-slate-100">Krypto</Link>
                   <Link href="/bedrift" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary active:bg-slate-100">Bedrift</Link>
-                  <Link href="/bolig" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary active:bg-slate-100">Bolig</Link>
+                  <Link href="/eiendom" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary active:bg-slate-100">Bolig</Link>
                 </div>
               </div>
               <div className="h-px bg-slate-100 my-2"></div>
