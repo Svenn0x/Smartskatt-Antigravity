@@ -134,6 +134,54 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Eksperthjelp innen Krypto Section */}
+      <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-12 pb-24">
+        <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-x-1/2 translate-y-1/2"></div>
+          
+          <div className="relative z-10 flex flex-col md:flex-row gap-12 items-center">
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">Krypto-skatt gjort enkelt</h2>
+              
+              <Link 
+                href="/krypto" 
+                className="inline-block bg-gradient-to-r from-orange-400 to-yellow-400 text-slate-900 font-bold px-4 py-2 rounded-full mb-6 text-sm hover:scale-105 transition-transform shadow-lg shadow-orange-500/20"
+              >
+                NYHET: Prøv Krypto-Sjekken og unngå baksmell! ₿🚀
+              </Link>
+
+              <p className="text-slate-300 text-lg mb-8 max-w-lg mx-auto md:mx-0">
+                Har du handlet krypto, drevet med staking eller DeFi? Vi har trålet gjennom Skatte-ABC 2026 så du slipper, og gir deg den mest forståelige guiden i Norge.
+              </p>
+              
+              <Link 
+                href="/krypto" 
+                className="inline-flex items-center justify-center gap-2 bg-white text-slate-900 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all active:scale-95"
+              >
+                Til Krypto-Guiden
+                <svg className="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </Link>
+            </div>
+            
+            <div className="flex-1 w-full space-y-4">
+              <Link href="/krypto/tap-og-gevinst" className="block bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-5 transition-all group backdrop-blur-sm">
+                <h3 className="font-bold text-lg mb-1 group-hover:text-orange-300 transition-colors">Beregning av Gevinst og Tap (FIFO) →</h3>
+                <p className="text-sm text-slate-400">Slik utnytter du tapsfradraget på 22%.</p>
+              </Link>
+              <Link href="/krypto/staking-og-mining" className="block bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-5 transition-all group backdrop-blur-sm">
+                <h3 className="font-bold text-lg mb-1 group-hover:text-orange-300 transition-colors">Staking, DeFi og Mining →</h3>
+                <p className="text-sm text-slate-400">Passiv inntekt fra krypto må rapporteres.</p>
+              </Link>
+              <Link href="/krypto" className="block bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-5 transition-all group backdrop-blur-sm">
+                <h3 className="font-bold text-lg mb-1 group-hover:text-orange-300 transition-colors">Beste Krypto-skatteverktøy →</h3>
+                <p className="text-sm text-slate-400">Automatiser rapporteringen.</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

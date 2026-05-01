@@ -54,8 +54,11 @@ export default function KryptoPillarPage() {
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight text-balance">
           Kryptoskatt i 2026: Slik unngår du baksmell (uten å bli gal) 🚀
         </h1>
-        <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed text-balance">
+        <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed text-balance mb-4">
           Har du kjøpt, solgt eller staket litt krypto? Velkommen til den eneste guiden du trenger for å fikse skatten, fortalt på en måte som faktisk gir mening.
+        </p>
+        <p className="text-md font-medium text-indigo-600">
+          Vi har trålet gjennom Skatte-ABC 2026 så du slipper.
         </p>
       </header>
 
@@ -73,10 +76,12 @@ export default function KryptoPillarPage() {
       <CryptoChecker />
 
       <article className="prose prose-slate prose-lg max-w-none prose-a:text-indigo-600 prose-headings:text-slate-900 mb-16">
-        <h2>Hvordan fungerer skatten i praksis?</h2>
-        <p>
-          Hver gang du selger en krypto, eller bytter én krypto mot en annen (for eksempel fra Bitcoin til Ethereum), utløser du skatt. Skatteetaten bryr seg ikke om du har tatt pengene ut til den norske bankkontoen din; transaksjonen skjer i det øyeblikket handelen utføres på kryptobørsen.
-        </p>
+        <div className="bg-slate-50 border-l-4 border-indigo-500 p-6 rounded-r-2xl my-8">
+          <h2 className="text-2xl font-bold mt-0 mb-2">Må man skatte av krypto hvis man ikke har tatt ut pengene til banken?</h2>
+          <p className="mb-0 text-slate-700">
+            <strong>JA.</strong> I Norge utløser hvert bytte mellom kryptovalutaer (f.eks. fra Bitcoin til Solana) skatteplikt, uavhengig av om pengene tas ut til en norsk bankkonto eller ikke.
+          </p>
+        </div>
         
         {/* Affiliate-plassering: Kompis-anbefaling */}
         <div className="bg-emerald-50 border border-emerald-200 p-8 rounded-2xl my-10 shadow-sm">
@@ -86,13 +91,41 @@ export default function KryptoPillarPage() {
           <p className="text-emerald-800 font-medium mb-4">
             Skal du beregne skatten på hundrevis av transaksjoner? Å gjøre det i Excel er ren tortur. Vi har testet verktøyene, og disse gjør jobben for deg automatisk:
           </p>
+          <div className="overflow-x-auto mt-6 mb-6 rounded-xl border border-emerald-100 shadow-sm">
+            <table className="w-full text-left bg-white border-collapse">
+              <thead>
+                <tr className="bg-emerald-100 text-emerald-900">
+                  <th className="p-4 font-bold border-b border-emerald-200">Verktøy</th>
+                  <th className="p-4 font-bold border-b border-emerald-200">Beste Egenskap</th>
+                  <th className="p-4 font-bold border-b border-emerald-200">Skatteetaten Integrasjon</th>
+                </tr>
+              </thead>
+              <tbody className="text-slate-700 text-sm md:text-base">
+                <tr className="border-b border-slate-100 hover:bg-emerald-50/50 transition-colors">
+                  <td className="p-4 font-bold">Kryptosekken</td>
+                  <td className="p-4">Skreddersydd for særnorske regler (formue etc)</td>
+                  <td className="p-4 flex items-center"><CheckCircle2 className="w-4 h-4 text-emerald-500 mr-2" /> Direkte opplasting</td>
+                </tr>
+                <tr className="border-b border-slate-100 hover:bg-emerald-50/50 transition-colors">
+                  <td className="p-4 font-bold">Koinly</td>
+                  <td className="p-4">Støtter bokstavelig talt over 700+ børser og wallets</td>
+                  <td className="p-4 flex items-center"><CheckCircle2 className="w-4 h-4 text-emerald-500 mr-2" /> Fil-eksport for Norge</td>
+                </tr>
+                <tr className="hover:bg-emerald-50/50 transition-colors">
+                  <td className="p-4 font-bold">CoinTracker</td>
+                  <td className="p-4">Visuelt nydelig portefølje-oversikt</td>
+                  <td className="p-4">Manuell utfylling oftere nødvendig</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="#affiliate-link-1" className="bg-white hover:bg-emerald-100 border-2 border-emerald-300 text-slate-800 font-bold py-3 px-4 rounded-xl flex items-center justify-between transition-colors">
-              <span>KryptoSek (Norsk favoritt)</span>
+            <a href="#affiliate-link-1" className="bg-white hover:bg-emerald-100 border-2 border-emerald-300 text-slate-800 font-bold py-3 px-4 rounded-xl flex items-center justify-between transition-colors shadow-sm">
+              <span>Prøv Kryptosekken</span>
               <ArrowRight className="w-5 h-5 text-emerald-500" />
             </a>
-            <a href="#affiliate-link-2" className="bg-white hover:bg-emerald-100 border-2 border-emerald-300 text-slate-800 font-bold py-3 px-4 rounded-xl flex items-center justify-between transition-colors">
-              <span>Koinly (Global gigant)</span>
+            <a href="#affiliate-link-2" className="bg-white hover:bg-emerald-100 border-2 border-emerald-300 text-slate-800 font-bold py-3 px-4 rounded-xl flex items-center justify-between transition-colors shadow-sm">
+              <span>Prøv Koinly</span>
               <ArrowRight className="w-5 h-5 text-emerald-500" />
             </a>
           </div>
