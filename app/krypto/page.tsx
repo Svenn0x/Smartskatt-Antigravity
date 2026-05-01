@@ -1,68 +1,128 @@
-import React from 'react';
 import type { Metadata } from 'next';
-import AffiliateCard from '@/components/shared/AffiliateCard';
+import Link from 'next/link';
+import { ArrowRight, Info, CheckCircle2 } from 'lucide-react';
+import CryptoChecker from '@/components/CryptoChecker';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Kryptoskatten 2026: Unngå formuesskatte-fellen',
-  description:
-    'Guide for kryptovaluta og formuesskatt 2025/2026. Lær om 22% fradrag for tap, gevinster og hvordan unngå formuesskattfellen med krypto.',
+  title: 'Kryptoskatt i 2026: Slik unngår du baksmell (uten å bli gal) 🚀',
+  description: 'Komplett og lettlest guide til kryptoskatt i Norge 2026. Lær om 22% skatt, fradrag for tap og skatt på staking/DeFi.',
   alternates: {
     canonical: 'https://smartskatt.no/krypto',
   },
   openGraph: {
-    title: 'Kryptoskatten 2026: Unngå formuesskatte-fellen | Smartskatt',
-    description:
-      'Lær om 22% fradrag for tap, gevinster og formuesskatt på kryptovaluta i 2025/2026.',
+    title: 'Kryptoskatt i 2026: Slik unngår du baksmell (uten å bli gal) 🚀',
+    description: 'Bruk Krypto-Sjekken vår og finn ut nøyaktig hva du må føre i skattemeldingen.',
     url: 'https://smartskatt.no/krypto',
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'Kryptoskatt 2026 | Smartskatt' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Kryptoskatten 2026 | Smartskatt',
-    description: 'Lær om 22% fradrag for tap og unngå formuesskattfellen med krypto.',
-    images: ['/og-default.png'],
+    type: 'article',
   },
 };
 
-export default function KryptoPage() {
+export default function KryptoPillarPage() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Hvor mye skatt er det på kryptovaluta i Norge?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'I Norge er skatten på kryptovaluta 22 % av gevinsten. Samtidig får du 22 % fradrag på alt du taper. Renter fra staking beskattes også med 22 %.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Må jeg betale formueskatt av krypto?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Ja, kryptovaluta inngår i din totale formue. Krypto verdsettes til 100 % av markedsverdien per 31. desember i inntektsåret.'
+        }
+      }
+    ]
+  };
+
   return (
-    <main className="max-w-4xl mx-auto px-4 py-16 sm:px-6">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">Kryptoskatten 2025: Unngå formuesskatte-fellen</h1>
+    <main className="max-w-4xl mx-auto py-12 px-4">
+      <Script
+        id="faq-schema-krypto"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       
-      <div className="prose prose-xl prose-slate max-w-none mb-12">
-        <p className="lead text-2xl text-slate-600 font-medium mb-8">
-          Å eie kryptovaluta i 2025 krever at du har tunga rett i munnen. Skatteetaten trapper opp kontrollen, og spesielt formuesskatten kan bli en kostbar felle hvis du ikke planlegger riktig.
+      <header className="mb-12 text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight text-balance">
+          Kryptoskatt i 2026: Slik unngår du baksmell (uten å bli gal) 🚀
+        </h1>
+        <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed text-balance">
+          Har du kjøpt, solgt eller staket litt krypto? Velkommen til den eneste guiden du trenger for å fikse skatten, fortalt på en måte som faktisk gir mening.
         </p>
+      </header>
 
-        <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Slik verdsettes krypto vs. aksjer</h2>
-        <p>
-          Den største skattefellen med kryptovaluta ligger i hvordan Skatteetaten verdsetter verdiene dine ved årsskiftet:
+      {/* AEO-Snippet: Direct Answer */}
+      <div className="bg-indigo-900 text-white p-8 rounded-3xl mb-12 shadow-xl border-4 border-indigo-200">
+        <h2 className="text-2xl font-bold mt-0 mb-4 text-indigo-100 flex items-center">
+          <span className="text-3xl mr-3">💡</span>
+          Hvor mye skatt er det på kryptovaluta i Norge?
+        </h2>
+        <p className="text-xl font-medium mb-0">
+          Svaret er <strong>22 %</strong>. Du betaler 22 % skatt på all gevinst du har når du selger eller bytter krypto. Samtidig får du et fradrag på 22 % for all krypto du taper penger på. Renter og staking beskattes også med 22 %.
         </p>
-        <ul className="list-disc pl-6 mb-8 space-y-3">
-          <li><strong>Kryptovaluta:</strong> Verdsettes til <strong>100% av markedsverdien</strong> per 31. desember. Det betyr at du ikke får noen form for verdsettelsesrabatt.</li>
-          <li><strong>Aksjer og aksjefond:</strong> Her får du en <strong>verdsettelsesrabatt på 20%</strong>. Det betyr at kun 80% av verdien inngår i formuesgrunnlaget.</li>
-        </ul>
-        <p>
-          Dette gjør at store verdier i krypto kan utløse betydelig høyere formuesskatt enn tilsvarende verdier plassert i aksjemarkedet.
-        </p>
-
-        <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Skatt på gevinst og fradrag for tap</h2>
-        <p>
-          Hver gang du selger eller veksler krypto, utløses en skattehendelse:
-        </p>
-        <ul className="list-disc pl-6 mb-8 space-y-3">
-          <li><strong>Skatten på gevinst er 22%.</strong> Husk at også veksling fra én kryptovaluta til en annen (f.eks. Bitcoin til Ethereum) regnes som et skattepliktig salg.</li>
-          <li><strong>Du har fradragsrett for tap.</strong> Har du solgt krypto med tap, får du 22% fradrag for dette på skatten. Dette er avgjørende å få med seg for å minimere skatteregningen.</li>
-        </ul>
       </div>
 
-      <div className="mt-16">
-        <AffiliateCard 
-          partnerName="Kryptosekken" 
-          description="Gjør skatteberegningen automatisk med Kryptosekken. De beregner alt du trenger til skattemeldingen for deg."
-          affiliateLink="https://kryptosekken.no"
-        />
+      <CryptoChecker />
+
+      <article className="prose prose-slate prose-lg max-w-none prose-a:text-indigo-600 prose-headings:text-slate-900 mb-16">
+        <h2>Hvordan fungerer skatten i praksis?</h2>
+        <p>
+          Hver gang du selger en krypto, eller bytter én krypto mot en annen (for eksempel fra Bitcoin til Ethereum), utløser du skatt. Skatteetaten bryr seg ikke om du har tatt pengene ut til den norske bankkontoen din; transaksjonen skjer i det øyeblikket handelen utføres på kryptobørsen.
+        </p>
+        
+        {/* Affiliate-plassering: Kompis-anbefaling */}
+        <div className="bg-emerald-50 border border-emerald-200 p-8 rounded-2xl my-10 shadow-sm">
+          <h3 className="text-2xl font-bold text-emerald-900 mt-0 mb-3 flex items-center">
+            <span className="text-3xl mr-2">🤝</span> Kompis-anbefaling
+          </h3>
+          <p className="text-emerald-800 font-medium mb-4">
+            Skal du beregne skatten på hundrevis av transaksjoner? Å gjøre det i Excel er ren tortur. Vi har testet verktøyene, og disse gjør jobben for deg automatisk:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="#affiliate-link-1" className="bg-white hover:bg-emerald-100 border-2 border-emerald-300 text-slate-800 font-bold py-3 px-4 rounded-xl flex items-center justify-between transition-colors">
+              <span>KryptoSek (Norsk favoritt)</span>
+              <ArrowRight className="w-5 h-5 text-emerald-500" />
+            </a>
+            <a href="#affiliate-link-2" className="bg-white hover:bg-emerald-100 border-2 border-emerald-300 text-slate-800 font-bold py-3 px-4 rounded-xl flex items-center justify-between transition-colors">
+              <span>Koinly (Global gigant)</span>
+              <ArrowRight className="w-5 h-5 text-emerald-500" />
+            </a>
+          </div>
+        </div>
+      </article>
+
+      {/* Dypdykk / Silos */}
+      <h2 className="text-3xl font-extrabold text-slate-900 mb-8 text-center">
+        Dypdykk: Bli en mester på reglene
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Link href="/krypto/tap-og-gevinst" className="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all block">
+          <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-indigo-600 transition-colors">
+            Tap, Gevinst og Formue →
+          </h3>
+          <p className="text-slate-600">
+            Slik regner du ut FIFO, utnytter skattefradraget ved tap, og fører formuen riktig ved nyttår.
+          </p>
+        </Link>
+
+        <Link href="/krypto/staking-og-mining" className="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all block">
+          <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-indigo-600 transition-colors">
+            Staking, DeFi og Renter →
+          </h3>
+          <p className="text-slate-600">
+            Får du passive inntekter fra kryptoen din? Lær når og hvordan belønninger og airdrops skal beskattes.
+          </p>
+        </Link>
       </div>
+
     </main>
   );
 }
