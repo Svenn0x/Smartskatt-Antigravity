@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/shared/Navbar';
 import Footer from '@/components/shared/Footer';
+import StickyNewsletterLure from '@/components/shared/StickyNewsletterLure';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -128,6 +129,7 @@ export default function RootLayout({
         <main className="flex-1 flex flex-col">
           {children}
         </main>
+        <StickyNewsletterLure />
         <Footer />
       </body>
     </html>

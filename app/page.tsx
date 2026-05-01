@@ -62,7 +62,7 @@ export default function Home() {
           <p className="text-slate-600 max-w-xl mx-auto">Våre guider oversetter komplekse regler til enkle grep som sparer deg for penger.</p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
           <GuideCard 
             title="Krypto" 
             href="/guider/krypto" 
@@ -78,19 +78,52 @@ export default function Home() {
             color="from-blue-500 to-indigo-500"
           />
           <GuideCard 
-            title="Eiendom" 
-            href="/guider/eiendom" 
-            description="Fradrag for utleie, vedlikehold og boligsalg."
-            icon="🏠"
-            color="from-emerald-500 to-teal-400"
-          />
-          <GuideCard 
             title="Reise" 
             href="/guider/reisefradrag" 
             description="Pendlerfradrag og utgifter knyttet til arbeidsreiser."
             icon="🚗"
             color="from-purple-500 to-pink-500"
           />
+        </div>
+      </section>
+
+      {/* Eksperthjelp innen Eiendom Section (Focus on One Clear Message & CTA) */}
+      <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-24 pb-12">
+        <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-x-1/2 translate-y-1/2"></div>
+          
+          <div className="relative z-10 flex flex-col md:flex-row gap-12 items-center">
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">Eksperthjelp innen Eiendom</h2>
+              <p className="text-slate-300 text-lg mb-8 max-w-lg mx-auto md:mx-0">
+                Lurer du på skatt ved utleie eller salg av bolig? Vi har bygget Norges mest komplette guide, inkludert en dynamisk kalkulator som forteller deg nøyaktig hva du må betale.
+              </p>
+              
+              <Link 
+                href="/eiendom" 
+                className="inline-flex items-center justify-center gap-2 bg-white text-slate-900 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all active:scale-95"
+              >
+                Prøv Gevinstkalkulatoren
+                <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </Link>
+            </div>
+            
+            <div className="flex-1 w-full space-y-4">
+              <Link href="/eiendom/skatt-salg-bolig" className="block bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-5 transition-all group backdrop-blur-sm">
+                <h3 className="font-bold text-lg mb-1 group-hover:text-indigo-300 transition-colors">Slik selger du boligen skattefritt i 2026 →</h3>
+                <p className="text-sm text-slate-400">Botidskrav, fradrag for oppussing og arv.</p>
+              </Link>
+              <Link href="/eiendom/utleie-egen-bolig" className="block bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-5 transition-all group backdrop-blur-sm">
+                <h3 className="font-bold text-lg mb-1 group-hover:text-indigo-300 transition-colors">Regler for utleie og Airbnb →</h3>
+                <p className="text-sm text-slate-400">Halvparten-regelen, 20.000 kr og sjablongmetoden.</p>
+              </Link>
+              <Link href="/eiendom" className="block bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-5 transition-all group backdrop-blur-sm">
+                <h3 className="font-bold text-lg mb-1 group-hover:text-indigo-300 transition-colors">Formuesverdi og Eiendomsskatt →</h3>
+                <p className="text-sm text-slate-400">Verdsettelse av primær- og sekundærbolig.</p>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

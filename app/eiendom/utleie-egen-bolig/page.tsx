@@ -8,6 +8,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://smartskatt.no/eiendom/utleie-egen-bolig',
   },
+  openGraph: {
+    title: 'Regler for skattefri utleie og Airbnb i 2026',
+    description: 'Slik maksimerer du skattefrie leieinntekter. Sjekk 20.000-kronersregelen og last ned vår gratis mal for husleiekontrakt.',
+    url: 'https://smartskatt.no/eiendom/utleie-egen-bolig',
+    type: 'article',
+    images: [{ url: '/images/utleie-egen-bolig-2026.webp', width: 1200, height: 630, alt: 'Regler for utleie av egen bolig' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Regler for skattefri utleie og Airbnb i 2026',
+    description: 'Sjekk 20.000-kronersregelen og last ned vår gratis mal for husleiekontrakt.',
+    images: ['/images/utleie-egen-bolig-2026.webp'],
+  },
 };
 
 export default function UtleieEgenBoligPage() {
@@ -35,6 +48,17 @@ export default function UtleieEgenBoligPage() {
           Leier du ut hele eller deler av hjemmet ditt? Avhengig av omfanget kan inntekten være 100% skattefri eller beskattes med 22%.
         </p>
       </header>
+
+      {/* Information Gain AEO: Visste du dette? */}
+      <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-2xl mb-12 shadow-sm relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-4 opacity-10">
+          <span className="text-6xl">💡</span>
+        </div>
+        <h3 className="text-xl font-bold text-amber-900 mt-0 mb-2">Visste du dette? (Pro-tip om møblert utleie)</h3>
+        <p className="text-amber-800 text-base mb-0">
+          Leier du ut <strong>skattepliktig</strong> og boligen er møblert? Du kan kreve et årlig "møbelsjablong-fradrag" på hele 15 % av brutto leieinntekt! Dette er et fradrag mange glemmer å føre, og det erstatter faktiske utgifter til vedlikehold/utskifting av møbler for å gjøre det enklere.
+        </p>
+      </div>
 
       <article className="prose prose-slate prose-lg max-w-none prose-a:text-indigo-600 prose-headings:text-slate-900">
         <h2>Langtidsutleie: Halvparten-regelen vs. 20.000-kronersregelen</h2>

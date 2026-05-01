@@ -153,6 +153,17 @@ export default function EiendomPillarPage() {
       </div>
 
       <article className="prose prose-slate prose-lg max-w-none">
+        {/* Information Gain AEO: Visste du dette? */}
+        <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-2xl my-10 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10">
+            <span className="text-6xl">💡</span>
+          </div>
+          <h3 className="text-xl font-bold text-amber-900 mt-0 mb-2">Visste du dette? (Pro-tip)</h3>
+          <p className="text-amber-800 text-base mb-0">
+            Skatteetaten forteller deg sjelden dette direkte: Hvis du leier ut boligen din skattefritt og skal pusse opp, får du <strong>ikke</strong> fradrag for vedlikeholdskostnadene. Men, hvis du bytter til skattepliktig utleie det siste året før du selger (ved å leie ut over 50 %), kan du brått få fradrag for vedlikehold de siste 5 årene (etter en særskilt beregningsmodell).
+          </p>
+        </div>
+
         <h2>Sammenligning av skatt ved utleie</h2>
         <p>Å velge riktig utleiestrategi kan ha enorm påvirkning på nettoinntekten din. Tabellen under viser de eksakte skattereglene for 2026, avhengig av hvordan du leier ut:</p>
 

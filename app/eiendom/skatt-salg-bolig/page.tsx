@@ -9,6 +9,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://smartskatt.no/eiendom/skatt-salg-bolig',
   },
+  openGraph: {
+    title: 'Slik selger du boligen skattefritt i 2026',
+    description: 'Bruk vår kalkulator for å sjekke om du oppfyller botidskravet, og se hvilke fradrag du har krav på ved tap.',
+    url: 'https://smartskatt.no/eiendom/skatt-salg-bolig',
+    type: 'article',
+    images: [{ url: '/images/skatt-salg-bolig-2026.webp', width: 1200, height: 630, alt: 'Skatt ved salg av bolig' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Slik selger du boligen skattefritt i 2026',
+    description: 'Botidskrav, fradrag og arv av bolig.',
+    images: ['/images/skatt-salg-bolig-2026.webp'],
+  },
 };
 
 export default function SkattSalgBoligPage() {
@@ -36,6 +49,17 @@ export default function SkattSalgBoligPage() {
           Oppfyller du ikke botidskravet? Her er alt du trenger å vite om hvordan du beregner skattepliktig gevinst, samt reglene for arv og pendlerboliger.
         </p>
       </header>
+
+      {/* Information Gain AEO: Visste du dette? */}
+      <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-2xl mb-12 shadow-sm relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-4 opacity-10">
+          <span className="text-6xl">💡</span>
+        </div>
+        <h3 className="text-xl font-bold text-amber-900 mt-0 mb-2">Visste du dette? (Pro-tip om megleromkostninger)</h3>
+        <p className="text-amber-800 text-base mb-0">
+          Mange tror at de alltid kan trekke fra megleromkostninger for å redusere skatten sin. Sannheten er at <strong>hvis boligsalget ditt er skattefritt</strong> (du oppfyller botidskravet), får du <em>ingen</em> skattefradrag for kostnadene til megler, annonsering eller eierskifteforsikring. Disse kostnadene er kun fradragsberettigede dersom salget er skattepliktig.
+        </p>
+      </div>
 
       {/* AEO Snippet: Slik beregner du inngangsverdi og gevinst */}
       <section 
