@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
 import BoligskattLure from '@/components/kalkulator/BoligskattLure';
+import FradragsVeiviser from '@/components/kalkulator/FradragsVeiviser';
 
 export const metadata: Metadata = {
   title: 'Boligskatt 2026: Den store guiden til skatt på eiendom',
@@ -80,6 +81,19 @@ export default function EiendomPillarPage() {
     ],
   };
 
+  const datasetSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: 'Sammenligning av utleie: Privat vs. AS i 2026',
+    description: 'En tabell som sammenligner skatteregler, fradrag og satser for boligutleie som privatperson mot utleie gjennom Aksjeselskap (AS) i Norge for inntektsåret 2026.',
+    keywords: ['skattesats', 'privat utleie', 'utleie AS', 'eiendomsskatt', '2026'],
+    license: 'https://creativecommons.org/publicdomain/zero/1.0/',
+    creator: {
+      '@type': 'Organization',
+      name: 'Smartskatt',
+    },
+  };
+
   return (
     <main className="max-w-4xl mx-auto py-12 px-4">
       {/* JSON-LD Schema Script */}
@@ -87,6 +101,11 @@ export default function EiendomPillarPage() {
         id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="dataset-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
       />
 
       <header className="mb-12 text-center">
@@ -128,6 +147,15 @@ export default function EiendomPillarPage() {
         </div>
       </section>
 
+      {/* Smart Fradrags-veiviser */}
+      <section className="mb-16">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Finn dine skjulte eiendomsfradrag</h2>
+          <p className="text-slate-600 text-lg">Vår smarte veiviser hjelper deg å finne alle fradrag du har krav på – enten du leier ut, pusser opp eller skal selge.</p>
+        </div>
+        <FradragsVeiviser />
+      </section>
+
       {/* Kalkulator Lure */}
       <BoligskattLure />
 
@@ -164,9 +192,50 @@ export default function EiendomPillarPage() {
           </p>
         </div>
 
-        <h2>Sammenligning av skatt ved utleie</h2>
-        <p>Å velge riktig utleiestrategi kan ha enorm påvirkning på nettoinntekten din. Tabellen under viser de eksakte skattereglene for 2026, avhengig av hvordan du leier ut:</p>
+        <h2>Sammenligning av skatt ved utleie: Privat vs. AS</h2>
+        <p>Å velge riktig utleiestrategi kan ha enorm påvirkning på nettoinntekten din. Tabellen under viser de eksakte skattereglene for 2026 for privat utleie versus å leie ut gjennom et Aksjeselskap (AS):</p>
+        
+        <div className="overflow-x-auto my-8">
+          <table className="min-w-full text-left text-sm whitespace-nowrap bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+            <thead className="bg-slate-50 uppercase tracking-wider text-slate-500 text-xs border-b border-slate-200">
+              <tr>
+                <th scope="col" className="px-6 py-4 font-semibold">Område</th>
+                <th scope="col" className="px-6 py-4 font-semibold text-indigo-700">Privat Utleie</th>
+                <th scope="col" className="px-6 py-4 font-semibold text-emerald-700">Gjennom AS</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100 text-slate-700">
+              <tr className="hover:bg-slate-50 transition-colors">
+                <td className="px-6 py-4 font-medium text-slate-900">Skatt på overskudd</td>
+                <td className="px-6 py-4">22 % (Kapitalinntekt)</td>
+                <td className="px-6 py-4">22 % (Selskapsskatt)</td>
+              </tr>
+              <tr className="hover:bg-slate-50 transition-colors">
+                <td className="px-6 py-4 font-medium text-slate-900">Skatt på utbytte til eier</td>
+                <td className="px-6 py-4">Ikke aktuelt</td>
+                <td className="px-6 py-4">37,84 % (hvis du tar ut pengene privat)</td>
+              </tr>
+              <tr className="hover:bg-slate-50 transition-colors">
+                <td className="px-6 py-4 font-medium text-slate-900">Skattefritt salg</td>
+                <td className="px-6 py-4">Ja, hvis botidskravet (12 av siste 24 mnd) er oppfylt</td>
+                <td className="px-6 py-4">Nei, alltid skattepliktig (men fritaksmetoden gjelder ved salg av aksjene)</td>
+              </tr>
+              <tr className="hover:bg-slate-50 transition-colors">
+                <td className="px-6 py-4 font-medium text-slate-900">Formueskatt (Verdsettelse)</td>
+                <td className="px-6 py-4">Primærbolig: 25%. Sekundærbolig: 100%</td>
+                <td className="px-6 py-4">Næringseiendom i AS har ofte høy verdsettelse, men gjeldsfradrag gis.</td>
+              </tr>
+              <tr className="hover:bg-slate-50 transition-colors">
+                <td className="px-6 py-4 font-medium text-slate-900">Regnskapsplikt</td>
+                <td className="px-6 py-4">Forenklet / Ofte ingen</td>
+                <td className="px-6 py-4">Ja, full regnskaps- og revisjonsplikt for AS</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
+        <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-4">Sammenligning: Langtidsutleie vs. Korttidsutleie (Privat)</h3>
+        <p>Her er en oversikt over de ulike formene for privat utleie og grensene som gjelder i 2026:</p>
         <div className="overflow-x-auto my-8">
           <table className="min-w-full text-left text-sm md:text-base bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
             <thead className="bg-slate-100 uppercase tracking-wider text-slate-600 text-xs font-bold">
