@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, Home, Download, FileText, Check } from 'lucide-react';
-import DeductionWizard from '@/components/kalkulator/DeductionWizard';
+import DeductionWizard from '@/components/DeductionWizard';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Utleie av egen bolig: Airbnb, Regler og Skatt (2026)',
@@ -25,8 +26,36 @@ export const metadata: Metadata = {
 };
 
 export default function UtleieEgenBoligPage() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Er Airbnb-utleie skattefritt?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'De første 10 000 kr du tjener på korttidsutleie i løpet av året er 100 % skattefrie. For inntekter over dette beløpet er 85 % skattepliktig, som du betaler 22 % skatt på.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Hva er forskjellen på vedlikehold og påkostning?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Vedlikehold betyr å bringe eiendommen tilbake til standarden den hadde da den var ny (f.eks. å male), og kan trekkes fra på skatten samme år. Påkostning er å oppgradere til en bedre standard (f.eks. fra standard kjøkken til luksuskjøkken), og kan kun trekkes fra gevinsten når du en gang selger.'
+        }
+      }
+    ]
+  };
+
   return (
     <main className="max-w-4xl mx-auto py-12 px-4">
+      <Script
+        id="faq-schema-utleie"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="mb-8">
         <Link 
           href="/eiendom" 
@@ -50,6 +79,14 @@ export default function UtleieEgenBoligPage() {
         </p>
       </header>
 
+      {/* Fradrags-kompisen Intro */}
+      <div className="mb-12">
+        <p className="text-lg text-indigo-700 font-semibold mb-4 bg-indigo-50 p-6 rounded-2xl border border-indigo-100 shadow-sm">
+          Før du graver deg ned i reglene under, la oss ta en kjapp sjekk: Hvor mye penger kan du egentlig spare? Bruk Fradrags-kompisen under for å få svar på 1 minutt! 👇
+        </p>
+        <DeductionWizard />
+      </div>
+
       {/* Information Gain AEO: Visste du dette? */}
       <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-2xl mb-12 shadow-sm relative overflow-hidden">
         <div className="absolute top-0 right-0 p-4 opacity-10">
@@ -59,6 +96,27 @@ export default function UtleieEgenBoligPage() {
         <p className="text-amber-800 text-base mb-0">
           Leier du ut <strong>skattepliktig</strong> og boligen er møblert? Da kan du kreve et årlig "møbelsjablong-fradrag" på hele 15 % av brutto leieinntekt! Det er et digg fradrag mange rett og slett glemmer å føre. Det erstatter faktiske utgifter til vedlikehold av møbler, så du slipper å ta vare på hver minste kvittering fra IKEA.
         </p>
+      </div>
+
+      {/* Hva sier ekspertene? */}
+      <div className="bg-indigo-900 text-white p-8 rounded-3xl mb-12 shadow-xl">
+        <h2 className="text-2xl font-bold mt-0 mb-4 text-indigo-100 flex items-center">
+          <span className="text-3xl mr-3">🧠</span>
+          Hva sier ekspertene? (Sagt på en måte man faktisk forstår)
+        </h2>
+        <p className="text-indigo-200 mb-4">
+          Når du spør en advokat om utleie, får du ofte et svar tjukt av paragrafer. Her er det de <em>egentlig</em> sier:
+        </p>
+        <ul className="space-y-4 text-indigo-50">
+          <li className="flex items-start">
+            <span className="text-emerald-400 mr-2 font-bold mt-1">1.</span>
+            <span><strong>Bruk rommene smart:</strong> Så lenge du bruker den fineste (mest verdifulle) delen av huset selv, kan du leie ut resten skattefritt. Skatteetaten bryr seg ikke om antall kvadratmeter, men om <em>leieverdi</em>. Bor du i en liten penthouse og leier ut en stor, kjip kjeller? Helt innafor!</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-emerald-400 mr-2 font-bold mt-1">2.</span>
+            <span><strong>Skriv alt ned:</strong> Muntlige avtaler er kult helt til vaskemaskinen ryker. Bruk alltid en formell kontrakt, uansett om du leier ut til en kompis. (Vi har lagt ved en gratis mal lenger ned 👇).</span>
+          </li>
+        </ul>
       </div>
 
       <article className="prose prose-slate prose-lg max-w-none prose-a:text-indigo-600 prose-headings:text-slate-900">
@@ -114,9 +172,7 @@ export default function UtleieEgenBoligPage() {
         <p>
           <em>Viktig:</em> Fribeløpet på 10.000 kr gjelder per bolig per år, ikke per leietaker. Skatteetaten mottar i de fleste tilfeller opplysninger direkte fra plattformer som Airbnb og Booking.com, så informasjonen ligger ofte forhåndsutfylt.
         </p>
-
-        <DeductionWizard />
-
+        <br/>
         {/* Konverteringspunkt: Lure */}
         <section className="bg-gradient-to-br from-slate-900 to-indigo-900 text-white p-8 md:p-10 rounded-3xl my-12 text-center shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 to-teal-400"></div>

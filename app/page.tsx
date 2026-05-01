@@ -96,6 +96,14 @@ export default function Home() {
           <div className="relative z-10 flex flex-col md:flex-row gap-12 items-center">
             <div className="flex-1 text-center md:text-left">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">Eksperthjelp innen Eiendom</h2>
+              
+              <Link 
+                href="/eiendom/utleie-egen-bolig" 
+                className="inline-block bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-900 font-bold px-4 py-2 rounded-full mb-6 text-sm hover:scale-105 transition-transform shadow-lg shadow-emerald-500/20"
+              >
+                NYHET: Prøv Fradrags-kompisen og finn dine skjulte boligfradrag! 🏠✨
+              </Link>
+
               <p className="text-slate-300 text-lg mb-8 max-w-lg mx-auto md:mx-0">
                 Lurer du på skatt ved utleie eller salg av bolig? Vi har bygget Norges mest komplette guide, inkludert en dynamisk kalkulator som forteller deg nøyaktig hva du må betale.
               </p>
