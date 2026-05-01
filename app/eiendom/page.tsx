@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import Script from 'next/script';
 import BoligskattLure from '@/components/kalkulator/BoligskattLure';
 
@@ -89,20 +90,16 @@ export default function EiendomPillarPage() {
       />
 
       <header className="mb-12 text-center">
-        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden mb-8 shadow-lg">
-          {/* Using placeholder since image path may not exist, but next/image syntax is implemented perfectly */}
-          <div className="absolute inset-0 bg-indigo-900 flex items-center justify-center text-indigo-200">
-             <span className="text-xl">[Bilde: boligskatt-2026-guide.webp lastes inn via next/image i produksjon]</span>
-          </div>
-          {/* 
-            <Image 
-              src="/images/boligskatt-2026-guide.webp" 
-              alt="Boligskatt 2026 Illustrasjon" 
-              fill 
-              priority
-              className="object-cover" 
-            /> 
-          */}
+        <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden mb-8 shadow-lg bg-indigo-900">
+          {/* Implementert next/image for optimalisering */}
+          <Image 
+            src="/images/boligskatt-2026-guide.webp" 
+            alt="Skatt utleie bolig Oslo 2026" 
+            fill 
+            priority
+            className="object-cover opacity-80" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent pointer-events-none"></div>
         </div>
         <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
           Den store guiden til <span className="text-indigo-600">Boligskatt i 2026</span>
@@ -134,25 +131,25 @@ export default function EiendomPillarPage() {
       {/* Kalkulator Lure */}
       <BoligskattLure />
 
-      {/* Clusters / Navigation */}
+      {/* Clusters / Navigation Teasers */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
-        <a href="/eiendom/skatt-salg-bolig" className="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+        <Link href="/eiendom/skatt-salg-bolig" className="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all block">
           <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-indigo-600 transition-colors">
             Skatt og Botid ved Boligsalg →
           </h3>
           <p className="text-slate-600 text-lg">
-            Dypdykk i botidskravet, fradrag for oppussing, og hvordan du unngår fellene når du skal selge boligen.
+            Dypdykk i botidskravet, særtilfeller som arvet bolig, og hvordan du unngår fellene når du skal selge boligen.
           </p>
-        </a>
+        </Link>
 
-        <a href="/eiendom/utleie-egen-bolig" className="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+        <Link href="/eiendom/utleie-egen-bolig" className="group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all block">
           <h3 className="text-2xl font-bold text-slate-800 mb-3 group-hover:text-indigo-600 transition-colors">
             Utleie og Airbnb →
           </h3>
           <p className="text-slate-600 text-lg">
-            Den komplette guiden til korttidsutleie vs. langtidsutleie. Slik maksimerer du skattefrie leieinntekter lovlig.
+            Den komplette guiden til korttidsutleie vs. langtidsutleie. Inkluderer skattefrie grenser og nedlastbar utleiekontrakt.
           </p>
-        </a>
+        </Link>
       </div>
 
       <article className="prose prose-slate prose-lg max-w-none">
