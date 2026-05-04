@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: 'Bruk vår kalkulator for å sjekke om du oppfyller botidskravet, og se hvilke fradrag du har krav på ved tap.',
     url: 'https://smartskatt.no/eiendom/skatt-salg-bolig',
     type: 'article',
-    images: [{ url: '/images/skatt-salg-bolig-2026.webp', width: 1200, height: 630, alt: 'Skatt ved salg av bolig' }],
+    images: [{ url: '/images/skatt-salg-bolig-2026.png', width: 1200, height: 630, alt: 'Skatt ved salg av bolig' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Slik selger du boligen skattefritt i 2026',
     description: 'Botidskrav, fradrag og arv av bolig.',
-    images: ['/images/skatt-salg-bolig-2026.webp'],
+    images: ['/images/skatt-salg-bolig-2026.png'],
   },
 };
 

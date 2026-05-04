@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: '/images/boligskatt-2026-guide.webp',
+        url: '/images/boligskatt-2026-guide.png',
         width: 1200,
         height: 630,
         alt: 'Boligskatt 2026 – En komplett guide fra Smartskatt',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Boligskatt 2026 – Komplett Guide',
     description: 'Lær reglene for skattefritt boligsalg og utleie. 100% oppdatert.',
-    images: ['/images/boligskatt-2026-guide.webp'],
+    images: ['/images/boligskatt-2026-guide.png'],
   },
 };
 
@@ -114,7 +114,7 @@ export default function EiendomPillarPage() {
         <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden mb-8 shadow-lg bg-indigo-900">
           {/* Implementert next/image for optimalisering */}
           <Image 
-            src="/images/boligskatt-2026-guide.webp" 
+            src="/images/boligskatt-2026-guide.png" 
             alt="Skatt utleie bolig Oslo 2026" 
             fill 
             priority

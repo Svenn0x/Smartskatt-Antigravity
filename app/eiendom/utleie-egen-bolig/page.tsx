@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     description: 'Slik maksimerer du skattefrie leieinntekter. Sjekk 20.000-kronersregelen og last ned vår gratis mal for husleiekontrakt.',
     url: 'https://smartskatt.no/eiendom/utleie-egen-bolig',
     type: 'article',
-    images: [{ url: '/images/utleie-egen-bolig-2026.webp', width: 1200, height: 630, alt: 'Regler for utleie av egen bolig' }],
+    images: [{ url: '/images/utleie-egen-bolig-2026.png', width: 1200, height: 630, alt: 'Regler for utleie av egen bolig' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Regler for skattefri utleie og Airbnb i 2026',
     description: 'Sjekk 20.000-kronersregelen og last ned vår gratis mal for husleiekontrakt.',
-    images: ['/images/utleie-egen-bolig-2026.webp'],
+    images: ['/images/utleie-egen-bolig-2026.png'],
   },
 };
 
