@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import DidYouKnow from '@/components/DidYouKnow';
 import ComparisonGrid from '@/components/ComparisonGrid';
+import HeroSlider from '@/components/HeroSlider';
+
 export const metadata: Metadata = {
   title: 'Smartskatt | Finn dine glemte skattefradrag (Oppdatert 2026)',
   description:
@@ -27,33 +29,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-full pb-24">
-      {/* Enterprise Hero Section */}
-      <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-32 pb-24 text-center lg:pt-40 lg:pb-32 animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out font-sans">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-widest mb-10">
-          <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-          Oppdatert for Skatteåret 2026
-        </div>
-        
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-slate-900 mb-8 text-balance leading-tight">
-          Den smarte måten å håndtere <br className="hidden sm:block" />
-          <span className="text-slate-800">skatten din på.</span>
-        </h1>
-        
-        <p className="text-lg sm:text-xl text-slate-500 font-light max-w-2xl mx-auto mb-12 text-balance leading-relaxed">
-          Uavhengige sammenligninger, interaktive fradragsveivisere og dypdykk-guider som hjelper deg med å ta lønnsomme valg for din økonomi.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/veiviser" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-slate-900 text-white font-medium px-8 py-4 min-h-[56px] rounded-lg shadow-sm hover:shadow-md hover:bg-slate-800 transition-all active:scale-[0.98]">
-            Start Skatteveiviseren
-            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-          </Link>
-          <a href="#sammenlign" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white text-slate-700 border border-slate-200 font-medium px-8 py-4 min-h-[56px] rounded-lg shadow-sm hover:bg-slate-50 transition-all active:scale-[0.98]">
-            Se Sammenligninger
-          </a>
-        </div>
-        <p className="mt-6 text-xs text-slate-400 font-medium tracking-wide">100% Gratis • Ingen innlogging påkrevd</p>
-      </section>
+      {/* Enterprise Hero Slider Section */}
+      <HeroSlider />
 
       {/* Did You Know Widget */}
       <DidYouKnow />
