@@ -90,6 +90,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Sammenligninger Section */}
+      <section id="sammenlign" className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-24 scroll-mt-24">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-sm font-bold mb-4">
+            <span>⚖️ Best i test 2026</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Sammenlign tjenester</h2>
+          <p className="text-slate-600 max-w-xl mx-auto text-lg text-balance">Vi tester markedets verktøy så du slipper. Her er de beste løsningene for din økonomi.</p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <GuideCard 
+            title="Kryptoskatt-verktøy" 
+            href="/sammenlign/kryptoskatt-verktoy" 
+            description="Kryptosekken vs Firi vs Koinly. Hvem er best for norske regler?"
+            icon="₿"
+            color="from-orange-500 to-yellow-400"
+          />
+          <GuideCard 
+            title="Regnskapsprogram" 
+            href="/sammenlign/regnskapsprogram-enk" 
+            description="Fiken vs Conta vs Tripletex for Enkeltpersonforetak."
+            icon="💼"
+            color="from-emerald-500 to-teal-500"
+          />
+          <GuideCard 
+            title="Utleiesystemer" 
+            href="/sammenlign/utleiesystemer" 
+            description="Hybel.no vs Husleie.no. Hvem beskytter deg best?"
+            icon="🏠"
+            color="from-indigo-500 to-purple-500"
+          />
+        </div>
+      </section>
+
       {/* Eksperthjelp innen Eiendom Section (Focus on One Clear Message & CTA) */}
       <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-24 pb-12">
         <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
