@@ -60,6 +60,24 @@ export default function DeductionWizard() {
       aria-label="Fradrags-kompisen veiviser" 
       className="bg-indigo-50/50 rounded-[2rem] p-6 md:p-10 shadow-sm border border-indigo-100 max-w-2xl mx-auto my-12 relative overflow-hidden"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Fradrags-Kompisen for Eiendom",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "All",
+            "description": "Tax Calculator Tool for å finne skattefradrag for utleie og salg av bolig i Norge.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "NOK"
+            }
+          })
+        }}
+      />
       {/* Progress Bar */}
       <div 
         className="absolute top-0 left-0 w-full h-2 bg-slate-100" 

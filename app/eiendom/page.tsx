@@ -5,6 +5,8 @@ import Script from 'next/script';
 import BoligskattLure from '@/components/kalkulator/BoligskattLure';
 import FradragsVeiviser from '@/components/kalkulator/FradragsVeiviser';
 
+import NextSteps from '@/components/NextSteps';
+
 export const metadata: Metadata = {
   title: 'Boligskatt 2026: Den store guiden til skatt på eiendom',
   description: 'Alt du må vite om boligskatt i 2026. Lær reglene for skattefritt boligsalg, utleie (Airbnb og langtids) og formuesverdi. 100% oppdatert for Skatteetaten.',
@@ -265,6 +267,7 @@ export default function EiendomPillarPage() {
           </table>
         </div>
       </article>
+      <NextSteps currentHub="eiendom" />
     </main>
   );
 }

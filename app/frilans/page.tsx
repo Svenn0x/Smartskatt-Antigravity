@@ -4,6 +4,8 @@ import { ArrowRight, Info, CheckCircle2, Star, AlertCircle } from 'lucide-react'
 import EnkDeduction from '@/components/EnkDeduction';
 import Script from 'next/script';
 
+import NextSteps from '@/components/NextSteps';
+
 export const metadata: Metadata = {
   title: 'Frilans-guiden: Maksimalt utbytte av ditt ENK i 2026 🚀',
   description: 'Skatt er ikke kjipt hvis du vet hva du kan trekke fra! Her er topp 5 fradrag for Enkeltpersonforetak og vår interaktive fradrags-automat.',
@@ -193,6 +195,7 @@ export default function FrilansPillarPage() {
         </Link>
       </div>
 
+      <NextSteps currentHub="frilans" />
     </main>
   );
 }

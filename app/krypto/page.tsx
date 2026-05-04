@@ -4,6 +4,8 @@ import { ArrowRight, Info, CheckCircle2 } from 'lucide-react';
 import CryptoChecker from '@/components/CryptoChecker';
 import Script from 'next/script';
 
+import NextSteps from '@/components/NextSteps';
+
 export const metadata: Metadata = {
   title: 'Kryptoskatt i 2026: Slik unngår du baksmell (uten å bli gal) 🚀',
   description: 'Komplett og lettlest guide til kryptoskatt i Norge 2026. Lær om 22% skatt, fradrag for tap og skatt på staking/DeFi.',
@@ -156,6 +158,7 @@ export default function KryptoPillarPage() {
         </Link>
       </div>
 
+      <NextSteps currentHub="krypto" />
     </main>
   );
 }

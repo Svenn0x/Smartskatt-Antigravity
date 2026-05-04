@@ -21,6 +21,24 @@ export default function EnkDeduction() {
 
   return (
     <section className="bg-emerald-50/30 rounded-[2rem] p-6 md:p-10 shadow-sm border border-emerald-100 max-w-2xl mx-auto my-12 relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Fradrags-Automaten for ENK",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "All",
+            "description": "Tax Calculator Tool for å finne skattefradrag for enkeltpersonforetak (ENK) i Norge.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "NOK"
+            }
+          })
+        }}
+      />
       {/* Progress Bar */}
       <div className="absolute top-0 left-0 w-full h-2 bg-emerald-100/50">
         <motion.div 

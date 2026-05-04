@@ -21,6 +21,24 @@ export default function CryptoChecker() {
 
   return (
     <section className="bg-slate-900 text-white rounded-[2rem] p-6 md:p-10 shadow-xl border border-slate-800 max-w-2xl mx-auto my-12 relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Krypto-Sjekken",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "All",
+            "description": "Tax Calculator Tool for å sjekke kryptoskatt, tap og gevinst i Norge.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "NOK"
+            }
+          })
+        }}
+      />
       {/* Progress Bar */}
       <div className="absolute top-0 left-0 w-full h-2 bg-slate-800">
         <motion.div 
