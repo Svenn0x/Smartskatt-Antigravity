@@ -16,7 +16,7 @@ export default function CryptoToolsPage() {
     {
       id: 1,
       name: 'Kryptosekken',
-      logo: 'https://logo.clearbit.com/kryptosekken.no',
+      logo: 'https://www.google.com/s2/favicons?domain=kryptosekken.no&sz=128',
       bestFor: 'Norskutviklet og skreddersydd for Skatteetatens systemer. Henter data automatisk fra de fleste børser.',
       isBest: true,
       rating: 5,
@@ -28,7 +28,7 @@ export default function CryptoToolsPage() {
     {
       id: 2,
       name: 'Firi',
-      logo: 'https://logo.clearbit.com/firi.com',
+      logo: 'https://www.google.com/s2/favicons?domain=firi.com&sz=128',
       bestFor: 'Nordens største kryptobørs. Gjør skatteberegningen lekende lett, men kun for handlene du gjør hos dem.',
       isBest: false,
       rating: 4,
@@ -40,7 +40,7 @@ export default function CryptoToolsPage() {
     {
       id: 3,
       name: 'Koinly',
-      logo: 'https://logo.clearbit.com/koinly.io',
+      logo: 'https://www.google.com/s2/favicons?domain=koinly.io&sz=128',
       bestFor: 'Verdensledende verktøy som støtter alt av børser og DeFi. Kraftig, men krever at du forstår reglene litt selv.',
       isBest: false,
       rating: 4,

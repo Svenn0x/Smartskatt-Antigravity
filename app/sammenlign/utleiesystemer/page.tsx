@@ -16,7 +16,7 @@ export default function RentalSystemsPage() {
     {
       id: 1,
       name: 'Hybel.no Premium',
-      logo: 'https://logo.clearbit.com/hybel.no',
+      logo: 'https://www.google.com/s2/favicons?domain=hybel.no&sz=128',
       bestFor: 'Norges største markedsplass for utleie, kombinert med et solid forvaltningssystem.',
       isBest: true,
       rating: 5,
@@ -28,7 +28,7 @@ export default function RentalSystemsPage() {
     {
       id: 2,
       name: 'Husleie.no',
-      logo: 'https://logo.clearbit.com/husleie.no',
+      logo: 'https://www.google.com/s2/favicons?domain=husleie.no&sz=128',
       bestFor: 'Fokusert utelukkende på forvaltning og juss for utleiere. Bygget av utleie-eksperter.',
       isBest: false,
       rating: 4,

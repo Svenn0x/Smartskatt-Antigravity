@@ -133,7 +133,7 @@ export default function Home() {
           {
             id: 1,
             name: 'Fiken',
-            logo: 'https://logo.clearbit.com/fiken.no',
+            logo: 'https://www.google.com/s2/favicons?domain=fiken.no&sz=128',
             bestFor: 'Regnskap for ENK og små AS',
             isBest: true,
             rating: 5,
@@ -145,7 +145,7 @@ export default function Home() {
           {
             id: 2,
             name: 'Kryptosekken',
-            logo: 'https://logo.clearbit.com/kryptosekken.no',
+            logo: 'https://www.google.com/s2/favicons?domain=kryptosekken.no&sz=128',
             bestFor: 'Kryptoskatt og RF-1159 skjema',
             isBest: true,
             rating: 5,
@@ -157,7 +157,7 @@ export default function Home() {
           {
             id: 3,
             name: 'Hybel.no',
-            logo: 'https://logo.clearbit.com/hybel.no',
+            logo: 'https://www.google.com/s2/favicons?domain=hybel.no&sz=128',
             bestFor: 'Forvaltning av utleiebolig',
             isBest: true,
             rating: 5,
