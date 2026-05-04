@@ -5,6 +5,7 @@ import EnkDeduction from '@/components/EnkDeduction';
 import Script from 'next/script';
 
 import NextSteps from '@/components/NextSteps';
+import { VerifisertInnhold } from '@/components/shared/GuideComponents';
 
 export const metadata: Metadata = {
   title: 'Frilans-guiden: Maksimalt utbytte av ditt ENK i 2026 🚀',
@@ -195,6 +196,30 @@ export default function FrilansPillarPage() {
         </Link>
       </div>
 
+      {/* SEO Silo-lenker */}
+      <div className="mt-12 mb-8">
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">Les også</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link href="/guide/fradrag-enk-oversikt" className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all block">
+            <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">Alle ENK-fradrag 2026 →</h3>
+            <p className="text-sm text-slate-600">Komplett oversikt over fradrag for enkeltpersonforetak.</p>
+          </Link>
+          <Link href="/guide/hjemmekontor-fradrag-enk" className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all block">
+            <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">Hjemmekontor-fradrag →</h3>
+            <p className="text-sm text-slate-600">Sjablong vs. faktiske kostnader – hvilken metode gir mest?</p>
+          </Link>
+          <Link href="/guide/enk-vs-as-skatt" className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all block">
+            <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">ENK vs AS i 2026 →</h3>
+            <p className="text-sm text-slate-600">Når lønner det seg å gå fra ENK til AS?</p>
+          </Link>
+          <Link href="/sammenlign/regnskapsprogram-enk" className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all block">
+            <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">Beste regnskapsprogram →</h3>
+            <p className="text-sm text-slate-600">Fiken vs Conta vs Tripletex for ENK.</p>
+          </Link>
+        </div>
+      </div>
+
+      <VerifisertInnhold />
       <NextSteps currentHub="frilans" />
     </main>
   );

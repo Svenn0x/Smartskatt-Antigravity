@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Info, CheckCircle2 } from 'lucide-react';
 import CryptoChecker from '@/components/CryptoChecker';
+import { VerifisertInnhold } from '@/components/shared/GuideComponents';
 import Script from 'next/script';
 
 import NextSteps from '@/components/NextSteps';
@@ -158,6 +159,30 @@ export default function KryptoPillarPage() {
         </Link>
       </div>
 
+      {/* SEO Silo-lenker */}
+      <div className="mt-12 mb-8">
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">Les også</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link href="/guide/skatt-pa-krypto-norge" className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all block">
+            <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">Kryptoskatt i Norge 2026 →</h3>
+            <p className="text-sm text-slate-600">Komplett guide til 22% skatt, FIFO-metoden og fradrag for tap.</p>
+          </Link>
+          <Link href="/guide/krypto-skattemelding-utfylling" className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all block">
+            <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">Krypto i skattemeldingen →</h3>
+            <p className="text-sm text-slate-600">Steg-for-steg utfylling av skattemeldingen for kryptovaluta.</p>
+          </Link>
+          <Link href="/guide/staking-skatt-norge" className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all block">
+            <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">Staking-skatt i Norge →</h3>
+            <p className="text-sm text-slate-600">Skatt på staking, DeFi, mining og airdrops.</p>
+          </Link>
+          <Link href="/sammenlign/kryptoskatt" className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all block">
+            <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">Krypto-skatteverktøy →</h3>
+            <p className="text-sm text-slate-600">Kryptosekken vs Koinly vs Firi – hvem er best?</p>
+          </Link>
+        </div>
+      </div>
+
+      <VerifisertInnhold />
       <NextSteps currentHub="krypto" />
     </main>
   );

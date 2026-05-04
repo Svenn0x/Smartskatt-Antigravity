@@ -6,6 +6,7 @@ import BoligskattLure from '@/components/kalkulator/BoligskattLure';
 import FradragsVeiviser from '@/components/kalkulator/FradragsVeiviser';
 
 import NextSteps from '@/components/NextSteps';
+import { VerifisertInnhold } from '@/components/shared/GuideComponents';
 
 export const metadata: Metadata = {
   title: 'Boligskatt 2026: Den store guiden til skatt på eiendom',
@@ -267,6 +268,31 @@ export default function EiendomPillarPage() {
           </table>
         </div>
       </article>
+
+      {/* SEO Silo-lenker */}
+      <div className="mt-12 mb-8">
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">Les også</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link href="/guide/boligfradrag-komplett-guide" className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all block">
+            <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">Boligfradrag 2026 →</h3>
+            <p className="text-sm text-slate-600">Alle fradrag du kan kreve som boligeier.</p>
+          </Link>
+          <Link href="/guide/skattefritt-boligsalg-regler" className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all block">
+            <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">Skattefritt boligsalg →</h3>
+            <p className="text-sm text-slate-600">Botidskrav, eiertid og regler for skattefri gevinst.</p>
+          </Link>
+          <Link href="/guide/skatt-ved-salg-av-utleiebolig" className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all block">
+            <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">Skatt ved salg av utleiebolig →</h3>
+            <p className="text-sm text-slate-600">Gevinstberegning, inngangsverdi og fradrag.</p>
+          </Link>
+          <Link href="/guide/airbnb-skatt-utleie" className="group bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all block">
+            <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">Airbnb-skatt 2026 →</h3>
+            <p className="text-sm text-slate-600">Skattefrie grenser, 85%-regelen og mva-plikt.</p>
+          </Link>
+        </div>
+      </div>
+
+      <VerifisertInnhold />
       <NextSteps currentHub="eiendom" />
     </main>
   );
