@@ -37,7 +37,8 @@ export default function Navbar() {
               </button>
               <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-slate-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all flex flex-col overflow-hidden">
                 <Link href="/krypto" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary">Krypto</Link>
-                <Link href="/bedrift" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary border-t border-slate-50">Bedrift</Link>
+                <Link href="/frilans" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary border-t border-slate-50">Frilans / ENK</Link>
+                <Link href="/bedrift" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary border-t border-slate-50">Bedrift / AS</Link>
                 <Link href="/eiendom" className="px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary border-t border-slate-50">Bolig</Link>
               </div>
             </div>
@@ -78,7 +79,8 @@ export default function Navbar() {
                 <p className="px-3 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Skatteguider</p>
                 <div className="space-y-1">
                   <Link href="/krypto" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary active:bg-slate-100">Krypto</Link>
-                  <Link href="/bedrift" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary active:bg-slate-100">Bedrift</Link>
+                  <Link href="/frilans" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary active:bg-slate-100">Frilans / ENK</Link>
+                  <Link href="/bedrift" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary active:bg-slate-100">Bedrift / AS</Link>
                   <Link href="/eiendom" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-secondary active:bg-slate-100">Bolig</Link>
                 </div>
               </div>
