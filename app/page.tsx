@@ -27,29 +27,32 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-full pb-24">
-      {/* Hero Section */}
-      <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-24 pb-16 text-center lg:pt-32 lg:pb-24 animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-sm font-medium mb-8">
-          <span className="flex h-2 w-2 rounded-full bg-accent"></span>
-          Oppdatert med skatteregler for 2026
+      {/* Enterprise Hero Section */}
+      <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-32 pb-24 text-center lg:pt-40 lg:pb-32 animate-in fade-in slide-in-from-bottom-4 duration-700 ease-out font-sans">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-600 text-xs font-semibold uppercase tracking-widest mb-10">
+          <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+          Oppdatert for Skatteåret 2026
         </div>
         
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 text-balance leading-tight">
-          Ikke betal mer skatt <br className="hidden sm:block" />
-          enn <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">du absolutt må.</span>
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-slate-900 mb-8 text-balance leading-tight">
+          Den smarte måten å håndtere <br className="hidden sm:block" />
+          <span className="text-slate-800">skatten din på.</span>
         </h1>
         
-        <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-10 text-balance">
-          Svar på 4 enkle spørsmål og finn ut nøyaktig hvilke skattefradrag du har krav på – helt gratis og uforpliktende.
+        <p className="text-lg sm:text-xl text-slate-500 font-light max-w-2xl mx-auto mb-12 text-balance leading-relaxed">
+          Uavhengige sammenligninger, interaktive fradragsveivisere og dypdykk-guider som hjelper deg med å ta lønnsomme valg for din økonomi.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/veiviser" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-brand-gradient text-white font-semibold px-8 py-4 min-h-[56px] rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all hover:-translate-y-1 active:scale-[0.98] active:translate-y-0 hover:opacity-95">
+          <Link href="/veiviser" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-slate-900 text-white font-medium px-8 py-4 min-h-[56px] rounded-lg shadow-sm hover:shadow-md hover:bg-slate-800 transition-all active:scale-[0.98]">
             Start Skatteveiviseren
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </Link>
+          <a href="#sammenlign" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white text-slate-700 border border-slate-200 font-medium px-8 py-4 min-h-[56px] rounded-lg shadow-sm hover:bg-slate-50 transition-all active:scale-[0.98]">
+            Se Sammenligninger
+          </a>
         </div>
-        <p className="mt-4 text-xs text-slate-500 font-medium uppercase tracking-wider">Tar under 2 minutter • Krever ingen innlogging</p>
+        <p className="mt-6 text-xs text-slate-400 font-medium tracking-wide">100% Gratis • Ingen innlogging påkrevd</p>
       </section>
 
       {/* Did You Know Widget */}
