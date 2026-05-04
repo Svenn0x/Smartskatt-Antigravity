@@ -49,12 +49,23 @@ export default function FrilansPillarPage() {
           <span>💼 Frilans & Enkeltpersonforetak</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight text-balance">
-          Frilans-guiden: Maksimalt utbytte av ditt ENK i 2026 🚀
+          Gjør ENK-skatten til en lek – Finn dine fradrag for 2026 💼✨
         </h1>
         <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed text-balance mb-4">
           Mange tror at skatt er kjipt. Men vet du hva som er gøy? Å oppdage at du kan føre store deler av livsstilen din (PC, reiser, kaffe) som næringsutgift! Slik gjør du det lovlig og smart.
         </p>
       </header>
+
+      {/* AEO-Snippet: Direct Answer */}
+      <div className="bg-emerald-900 text-white p-8 rounded-3xl mb-12 shadow-xl border-4 border-emerald-200">
+        <h2 className="text-2xl font-bold mt-0 mb-4 text-emerald-100 flex items-center">
+          <span className="text-3xl mr-3">💡</span>
+          Hvilke fradrag kan jeg få i enkeltpersonforetak?
+        </h2>
+        <p className="text-xl font-medium mb-0 leading-relaxed">
+          Skatteetaten har én hovedregel: Du kan trekke fra <strong>alle kostnader som er nødvendige for å skape inntekt i bedriften din</strong>. Kjøper du en bærbar PC til koding, leier du et kontor, eller reiser du til en kunde? Alt dette spiser ned overskuddet ditt – slik at du betaler mindre skatt.
+        </p>
+      </div>
 
       {/* Fradrags-Automaten */}
       <EnkDeduction />
@@ -130,35 +141,36 @@ export default function FrilansPillarPage() {
         </p>
         
         {/* Comparison Table ENK vs AS */}
+        {/* Faste Satser 2026 Tabell */}
         <div className="overflow-x-auto mt-6 mb-6 rounded-xl border border-emerald-100 shadow-sm">
           <table className="w-full text-left bg-white border-collapse">
             <thead>
               <tr className="bg-emerald-50 text-emerald-900">
-                <th className="p-4 font-bold border-b border-emerald-200">Kategori</th>
-                <th className="p-4 font-bold border-b border-emerald-200 text-center w-1/3">Enkeltpersonforetak (ENK)</th>
-                <th className="p-4 font-bold border-b border-emerald-200 text-center w-1/3">Aksjeselskap (AS)</th>
+                <th className="p-4 font-bold border-b border-emerald-200">Type Fradrag (Faste Satser)</th>
+                <th className="p-4 font-bold border-b border-emerald-200 text-center">Sats for 2026</th>
+                <th className="p-4 font-bold border-b border-emerald-200">Krav</th>
               </tr>
             </thead>
             <tbody className="text-slate-700 text-sm md:text-base">
               <tr className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                <td className="p-4 font-bold">Skattesats på overskudd</td>
-                <td className="p-4 text-center">Inntil 49,6 % (Trinnskatt)</td>
-                <td className="p-4 text-center">Flat 22 % (Selskapsskatt)</td>
+                <td className="p-4 font-bold">Kjøregodtgjørelse (Egen bil)</td>
+                <td className="p-4 text-center text-emerald-700 font-black">4,90 kr pr. km</td>
+                <td className="p-4">Dokumentert kjørebok kreves.</td>
               </tr>
               <tr className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                <td className="p-4 font-bold">Skatt på uttak (utbytte)</td>
-                <td className="p-4 text-center">Ingen! (Skattes løpende)</td>
-                <td className="p-4 text-center">37,84 % (Utbytteskatt)</td>
+                <td className="p-4 font-bold">Hjemmekontor (Sjablong)</td>
+                <td className="p-4 text-center text-emerald-700 font-black">2 150 kr</td>
+                <td className="p-4">Eksklusivt rom brukt kun til næring.</td>
               </tr>
               <tr className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                <td className="p-4 font-bold">Sykepenger fra NAV</td>
-                <td className="p-4 text-center">80 % fra dag 17</td>
-                <td className="p-4 text-center">100 % fra dag 17 (som ansatt)</td>
+                <td className="p-4 font-bold">Ekom-tillegg (Sjablong for skatt)</td>
+                <td className="p-4 text-center text-rose-600 font-black">+ 4 392 kr (inntekt)</td>
+                <td className="p-4">Legges til personinntekt ved dekket ekom.</td>
               </tr>
               <tr className="hover:bg-slate-50 transition-colors">
-                <td className="p-4 font-bold">Minste startkapital</td>
-                <td className="p-4 text-center">0 kr</td>
-                <td className="p-4 text-center">30 000 kr</td>
+                <td className="p-4 font-bold">Direkte utgiftsføring (Grense)</td>
+                <td className="p-4 text-center text-emerald-700 font-black">15 000 kr</td>
+                <td className="p-4">Utstyr under 15k kan føres direkte. Over 15k må avskrives.</td>
               </tr>
             </tbody>
           </table>
