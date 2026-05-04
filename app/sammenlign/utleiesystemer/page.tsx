@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import ComparisonTable, { ComparisonItem } from '@/components/ComparisonTable';
+import ComparisonGrid from '@/components/ComparisonGrid';
 import NextSteps from '@/components/NextSteps';
 import { ShieldCheck } from 'lucide-react';
 
@@ -12,27 +12,30 @@ export const metadata: Metadata = {
 };
 
 export default function RentalSystemsPage() {
-  const tools: ComparisonItem[] = [
+  const tools = [
     {
-      id: 'hybel',
+      id: 1,
       name: 'Hybel.no Premium',
-      description: 'Norges største markedsplass for utleie, kombinert med et solid forvaltningssystem.',
-      isBestInTest: true,
+      logo: 'https://logo.clearbit.com/hybel.no',
+      bestFor: 'Norges største markedsplass for utleie, kombinert med et solid forvaltningssystem.',
+      isBest: true,
       rating: 5,
       pros: ['Alt på ett sted (Annonsering + Forvaltning)', 'Gratis depositumskonto og inkasso', 'Signering med BankID'],
       cons: ['Annonsering i selve appen gir ikke samme rekkevidde som Finn.no', 'Koster penger ved mange leieforhold'],
-      affiliateLink: 'https://hybel.no?ref=smartskatt',
-      priceText: 'Gratis for 1 leieforhold'
+      link: 'https://hybel.no?ref=smartskatt',
+      price: 'Gratis for 1 leieforhold'
     },
     {
-      id: 'husleie',
+      id: 2,
       name: 'Husleie.no',
-      description: 'Fokusert utelukkende på forvaltning og juss for utleiere. Bygget av utleie-eksperter.',
+      logo: 'https://logo.clearbit.com/husleie.no',
+      bestFor: 'Fokusert utelukkende på forvaltning og juss for utleiere. Bygget av utleie-eksperter.',
+      isBest: false,
       rating: 4,
       pros: ['Svært gode leiekontrakter', 'Automatisk innkreving og purring', 'Gode samarbeidsavtaler for strøm/forsikring'],
       cons: ['Annonsering må gjøres på andre plattformer (f.eks Finn)', 'Noen tjenester er priset litt høyt'],
-      affiliateLink: 'https://husleie.no?ref=smartskatt',
-      priceText: '99 kr pr. mnd per bolig'
+      link: 'https://husleie.no?ref=smartskatt',
+      price: '99 kr pr. mnd per bolig'
     }
   ];
 
@@ -50,7 +53,7 @@ export default function RentalSystemsPage() {
         </p>
       </header>
 
-      <ComparisonTable items={tools} title="Selskapene vi anbefaler" />
+      <ComparisonGrid tools={tools} title="Selskapene vi anbefaler" category="utleiesystemer" />
 
       <article className="prose prose-slate prose-lg max-w-none prose-a:text-indigo-600 prose-headings:text-slate-900 mb-16 mt-16">
         <h2 className="text-3xl font-black">Ekspertens vurdering</h2>

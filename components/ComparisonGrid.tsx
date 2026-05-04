@@ -51,9 +51,12 @@ export default function ComparisonGrid({ title, tools, category }: Props) {
             <div className="p-8 flex-1">
               {/* Header */}
               <div className="flex justify-between items-start mb-6">
-                <div className="bg-slate-100 w-16 h-16 rounded-2xl flex items-center justify-center font-black text-xl text-slate-400">
-                  {/* Her kan man legge inn ekte logo-bilder senere */}
-                  LOGO
+                <div className="bg-slate-100 w-16 h-16 rounded-2xl flex items-center justify-center font-black text-xl text-slate-400 overflow-hidden shadow-sm">
+                  {tool.logo ? (
+                    <img src={tool.logo} alt={`${tool.name} logo`} className="w-full h-full object-contain p-2" />
+                  ) : (
+                    <span>LOGO</span>
+                  )}
                 </div>
                 <div className="text-right">
                   <div className="flex items-center gap-1 text-amber-400 mb-1">

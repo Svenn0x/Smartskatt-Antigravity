@@ -16,7 +16,7 @@ export default function EnkAccountingPage() {
     {
       id: 1,
       name: 'Fiken',
-      logo: '',
+      logo: 'https://logo.clearbit.com/fiken.no',
       bestFor: 'Norges soleklare favoritt for "ikke-økonomer". Gjør regnskap så enkelt at selv bestemor forstår det.',
       isBest: true,
       rating: 5,
@@ -28,7 +28,7 @@ export default function EnkAccountingPage() {
     {
       id: 2,
       name: 'Conta',
-      logo: '',
+      logo: 'https://logo.clearbit.com/conta.no',
       bestFor: 'Sterk utfordrer til Fiken med svært gode faktureringsløsninger. Ligner mer på tradisjonelt regnskap.',
       isBest: false,
       rating: 4,
@@ -40,7 +40,7 @@ export default function EnkAccountingPage() {
     {
       id: 3,
       name: 'Tripletex (Basis)',
-      logo: '',
+      logo: 'https://logo.clearbit.com/tripletex.no',
       bestFor: 'Kraftig plattform eiet av Visma. Vokser sømløst i takt med at ENK-et ditt blir til et stort AS.',
       isBest: false,
       rating: 4,
