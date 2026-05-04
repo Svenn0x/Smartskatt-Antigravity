@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import ComparisonTable, { ComparisonItem } from '@/components/ComparisonTable';
+import ComparisonGrid from '@/components/ComparisonGrid';
 import NextSteps from '@/components/NextSteps';
 import { ShieldCheck } from 'lucide-react';
 
@@ -7,43 +7,47 @@ export const metadata: Metadata = {
   title: 'De Beste Kryptoskatt-Verktøyene (2026 Test)',
   description: 'Sammenligning av Firi, Kryptosekken og Koinly. Hvilket verktøy er best for å rapportere kryptoskatt i Norge?',
   alternates: {
-    canonical: 'https://smartskatt.no/sammenlign/kryptoskatt-verktoy',
+    canonical: 'https://smartskatt.no/sammenlign/kryptoskatt',
   },
 };
 
 export default function CryptoToolsPage() {
-  const tools: ComparisonItem[] = [
+  const tools = [
     {
-      id: 'kryptosekken',
+      id: 1,
       name: 'Kryptosekken',
-      description: 'Norskutviklet og skreddersydd for Skatteetatens systemer. Henter data automatisk fra de fleste børser.',
-      isBestInTest: true,
+      logo: '',
+      bestFor: 'Norskutviklet og skreddersydd for Skatteetatens systemer. Henter data automatisk fra de fleste børser.',
+      isBest: true,
       rating: 5,
       pros: ['100% tilpasset norske skatteregler', 'Ferdig utfylt RF-1159 skjema', 'Integrasjon mot Altinn'],
       cons: ['Litt datert brukergrensesnitt', 'Support kan ta tid i høysesong'],
-      affiliateLink: 'https://kryptosekken.no?ref=smartskatt',
-      priceText: 'Fra 0 kr (inntil 100 transaksjoner)'
+      link: 'https://kryptosekken.no?ref=smartskatt',
+      price: 'Fra 0 kr (inntil 100 transaksjoner)'
     },
     {
-      id: 'firi',
+      id: 2,
       name: 'Firi',
-      description: 'Nordens største kryptobørs. Gjør skatteberegningen lekende lett, men kun for handlene du gjør hos dem.',
-      isBestInTest: false,
+      logo: '',
+      bestFor: 'Nordens største kryptobørs. Gjør skatteberegningen lekende lett, men kun for handlene du gjør hos dem.',
+      isBest: false,
       rating: 4,
       pros: ['Skatteberegning er innebygd og gratis', 'Super-enkel app', 'Trygt (Norsk selskap)'],
       cons: ['Støtter ikke beregning av krypto kjøpt på andre børser', 'Begrenset utvalg av mynter'],
-      affiliateLink: 'https://firi.com/no?ref=smartskatt',
-      priceText: 'Gratis skatterapport for egne kunder'
+      link: 'https://firi.com/no?ref=smartskatt',
+      price: 'Gratis skatterapport for egne kunder'
     },
     {
-      id: 'koinly',
+      id: 3,
       name: 'Koinly',
-      description: 'Verdensledende verktøy som støtter alt av børser og DeFi. Kraftig, men krever at du forstår reglene litt selv.',
+      logo: '',
+      bestFor: 'Verdensledende verktøy som støtter alt av børser og DeFi. Kraftig, men krever at du forstår reglene litt selv.',
+      isBest: false,
       rating: 4,
       pros: ['Enorm støtte for internasjonale børser og DeFi', 'Vakkert og raskt UI', 'Gode portefølje-oversikter'],
       cons: ['Ikke 100% tilpasset norske sær-regler på alt', 'Kan være dyrt for mange transaksjoner'],
-      affiliateLink: 'https://koinly.io?ref=smartskatt',
-      priceText: 'Fra 490 kr pr. skatteår'
+      link: 'https://koinly.io?ref=smartskatt',
+      price: 'Fra 490 kr pr. skatteår'
     }
   ];
 
@@ -61,7 +65,7 @@ export default function CryptoToolsPage() {
         </p>
       </header>
 
-      <ComparisonTable items={tools} title="Verktøyene vi anbefaler" />
+      <ComparisonGrid tools={tools} title="Verktøyene vi anbefaler" category="kryptoskatt" />
 
       <article className="prose prose-slate prose-lg max-w-none prose-a:text-orange-600 prose-headings:text-slate-900 mb-16 mt-16">
         <h2 className="text-3xl font-black">Ekspertens vurdering</h2>

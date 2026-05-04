@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import DidYouKnow from '@/components/DidYouKnow';
-
+import ComparisonGrid from '@/components/ComparisonGrid';
 export const metadata: Metadata = {
   title: 'Smartskatt | Finn dine glemte skattefradrag (Oppdatert 2026)',
   description:
@@ -100,10 +100,10 @@ export default function Home() {
           <p className="text-slate-600 max-w-xl mx-auto text-lg text-balance">Vi tester markedets verktøy så du slipper. Her er de beste løsningene for din økonomi.</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-16">
           <GuideCard 
             title="Kryptoskatt-verktøy" 
-            href="/sammenlign/kryptoskatt-verktoy" 
+            href="/sammenlign/kryptoskatt" 
             description="Kryptosekken vs Firi vs Koinly. Hvem er best for norske regler?"
             icon="₿"
             color="from-orange-500 to-yellow-400"
@@ -124,6 +124,50 @@ export default function Home() {
           />
         </div>
       </section>
+
+      {/* Våre Anbefalte Verktøy */}
+      <ComparisonGrid 
+        title="Våre anbefalte verktøy for 2026" 
+        category="skatt og økonomi" 
+        tools={[
+          {
+            id: 1,
+            name: 'Fiken',
+            logo: '',
+            bestFor: 'Regnskap for ENK og små AS',
+            isBest: true,
+            rating: 5,
+            pros: ['Gjør regnskap ufattelig enkelt', 'Automatisk skattemelding'],
+            cons: ['Koster fra 179,- mnd'],
+            link: 'https://fiken.no?ref=smartskatt',
+            price: 'Fra 179 kr pr. mnd'
+          },
+          {
+            id: 2,
+            name: 'Kryptosekken',
+            logo: '',
+            bestFor: 'Kryptoskatt og RF-1159 skjema',
+            isBest: true,
+            rating: 5,
+            pros: ['Skreddersydd for Skatteetaten', 'Støtter tusenvis av børser'],
+            cons: ['Krever API-oppsett'],
+            link: 'https://kryptosekken.no?ref=smartskatt',
+            price: 'Gratis opptil 100 tx'
+          },
+          {
+            id: 3,
+            name: 'Hybel.no',
+            logo: '',
+            bestFor: 'Forvaltning av utleiebolig',
+            isBest: true,
+            rating: 5,
+            pros: ['Gratis husleiekontrakt', 'Automatisk innkreving'],
+            cons: ['Gebyrer på noen tjenester'],
+            link: 'https://hybel.no?ref=smartskatt',
+            price: 'Gratis basisversjon'
+          }
+        ]}
+      />
 
       {/* Eksperthjelp innen Eiendom Section (Focus on One Clear Message & CTA) */}
       <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-24 pb-12">

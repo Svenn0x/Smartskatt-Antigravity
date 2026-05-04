@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import ComparisonTable, { ComparisonItem } from '@/components/ComparisonTable';
+import ComparisonGrid from '@/components/ComparisonGrid';
 import NextSteps from '@/components/NextSteps';
 import { ShieldCheck } from 'lucide-react';
 
@@ -12,37 +12,42 @@ export const metadata: Metadata = {
 };
 
 export default function EnkAccountingPage() {
-  const tools: ComparisonItem[] = [
+  const tools = [
     {
-      id: 'fiken',
+      id: 1,
       name: 'Fiken',
-      description: 'Norges soleklare favoritt for "ikke-økonomer". Gjør regnskap så enkelt at selv bestemor forstår det.',
-      isBestInTest: true,
+      logo: '',
+      bestFor: 'Norges soleklare favoritt for "ikke-økonomer". Gjør regnskap så enkelt at selv bestemor forstår det.',
+      isBest: true,
       rating: 5,
       pros: ['Ekstremt brukervennlig', 'Super app for å scanne kvitteringer', 'Utmerket kundeservice'],
       cons: ['Ikke det billigste alternativet', 'Litt begrensende hvis firmaet vokser veldig stort'],
-      affiliateLink: 'https://fiken.no?ref=smartskatt',
-      priceText: 'Fra 179 kr pr. mnd'
+      link: 'https://fiken.no?ref=smartskatt',
+      price: 'Fra 179 kr pr. mnd'
     },
     {
-      id: 'conta',
+      id: 2,
       name: 'Conta',
-      description: 'Sterk utfordrer til Fiken med svært gode faktureringsløsninger. Ligner mer på tradisjonelt regnskap.',
+      logo: '',
+      bestFor: 'Sterk utfordrer til Fiken med svært gode faktureringsløsninger. Ligner mer på tradisjonelt regnskap.',
+      isBest: false,
       rating: 4,
       pros: ['Markedets beste faktureringsmodul', 'Litt billigere enn Fiken', 'Solid økosystem'],
       cons: ['Litt brattere læringskurve', 'Ekstra moduler koster raskt ekstra'],
-      affiliateLink: 'https://conta.no?ref=smartskatt',
-      priceText: 'Fra 159 kr pr. mnd'
+      link: 'https://conta.no?ref=smartskatt',
+      price: 'Fra 159 kr pr. mnd'
     },
     {
-      id: 'tripletex',
+      id: 3,
       name: 'Tripletex (Basis)',
-      description: 'Kraftig plattform eiet av Visma. Vokser sømløst i takt med at ENK-et ditt blir til et stort AS.',
+      logo: '',
+      bestFor: 'Kraftig plattform eiet av Visma. Vokser sømløst i takt med at ENK-et ditt blir til et stort AS.',
+      isBest: false,
       rating: 4,
       pros: ['Svært skalerbart', 'Mange integrasjoner mot nettbutikker og banker', 'Proft dashboard'],
       cons: ['Altfor avansert for små frilansere', 'Mye "regnskaps-stammespråk"'],
-      affiliateLink: 'https://tripletex.no?ref=smartskatt',
-      priceText: 'Fra 149 kr pr. mnd'
+      link: 'https://tripletex.no?ref=smartskatt',
+      price: 'Fra 149 kr pr. mnd'
     }
   ];
 
@@ -60,7 +65,7 @@ export default function EnkAccountingPage() {
         </p>
       </header>
 
-      <ComparisonTable items={tools} title="Selskapene vi anbefaler" />
+      <ComparisonGrid tools={tools} title="Selskapene vi anbefaler" category="regnskapsprogram" />
 
       <article className="prose prose-slate prose-lg max-w-none prose-a:text-emerald-600 prose-headings:text-slate-900 mb-16 mt-16">
         <h2 className="text-3xl font-black">Ekspertens vurdering</h2>
