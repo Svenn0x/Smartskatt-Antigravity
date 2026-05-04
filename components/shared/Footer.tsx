@@ -12,8 +12,22 @@ export default function Footer() {
           <a href="/frilans" className="hover:text-white transition-colors">Frilans & ENK</a>
         </div>
 
+        <div className="max-w-2xl mx-auto mb-8 text-slate-400 space-y-4">
+          <div>
+            <h4 className="text-white font-bold mb-2">Om Smartskatt</h4>
+            <p>
+              Vi bygget Smartskatt.no fordi vi mener at skatt ikke trenger å være gresk. Vår misjon er å gjøre norske skatteregler forståelige, tilgjengelige og rettferdige for folk flest – enten du er frilanser, boligeier eller kryptoinvestor. Skatt gjort enkelt, rett og slett.
+            </p>
+          </div>
+          <div className="pt-4 border-t border-slate-800">
+            <h4 className="text-slate-500 font-bold mb-2 uppercase tracking-wider text-xs">Ansvarsfraskrivelse</h4>
+            <p className="text-xs text-slate-500">
+              Smartskatt.no er en uavhengig, veiledende tjeneste og erstatter ikke profesjonell skatterådgivning eller bindende svar fra Skatteetaten. Sjablonger, beløpsgrenser og regler oppdateres årlig, og selv om vi streber etter 100 % nøyaktighet, fraskriver vi oss ethvert økonomisk eller juridisk ansvar som følge av feil eller mangler på siden. Sjekk alltid mot Skatteetatens offisielle sider (skatteetaten.no) ved tvil.
+            </p>
+          </div>
+        </div>
+
         <p>&copy; {new Date().getFullYear()} Smartskatt.no. Alle rettigheter reservert.</p>
-        <p className="mt-2 text-slate-500">Tjenesten er kun veiledende. Sjekk alltid mot Skatteetatens offisielle sider.</p>
       </div>
     </footer>
   );

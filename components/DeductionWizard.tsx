@@ -315,11 +315,12 @@ export default function DeductionWizard() {
                 >
                   Start på nytt 🔄
                 </button>
-                <button 
-                  className="w-full sm:w-auto flex-[2] bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl transition-all shadow-md active:scale-95"
+                <a 
+                  href="/eiendom/utleie-egen-bolig"
+                  className="w-full sm:w-auto flex-[2] bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl transition-all shadow-md active:scale-95 text-center flex items-center justify-center"
                 >
-                  Slik fører du dette på 1-2-3 ✨
-                </button>
+                  Les den fulle bolig-guiden her ✨
+                </a>
               </div>
             </motion.div>
           )}

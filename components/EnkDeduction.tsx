@@ -111,9 +111,17 @@ export default function EnkDeduction() {
                   </div>
                 )}
               </div>
-              <button onClick={() => setCurrentStep('start')} className="w-full bg-slate-800 text-white font-bold py-4 rounded-xl hover:bg-slate-900 transition-all">
-                Sjekk på nytt 🔄
-              </button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button onClick={() => setCurrentStep('start')} className="w-full sm:w-auto flex-1 bg-white border-2 border-slate-200 text-slate-700 font-bold py-4 rounded-xl hover:bg-slate-50 transition-all">
+                  Sjekk på nytt 🔄
+                </button>
+                <a 
+                  href="/frilans"
+                  className="w-full sm:w-auto flex-[2] bg-slate-800 text-white font-bold py-4 rounded-xl hover:bg-slate-900 transition-all text-center flex items-center justify-center shadow-md active:scale-95"
+                >
+                  Gå til Frilans-Guiden ✨
+                </a>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

@@ -115,12 +115,20 @@ export default function CryptoChecker() {
                   </div>
                 )}
               </div>
-              <button 
-                onClick={() => setCurrentStep('start')}
-                className="w-full bg-white text-slate-900 font-bold py-4 rounded-xl hover:bg-slate-100 transition-all"
-              >
-                Prøv igjen 🔄
-              </button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button 
+                  onClick={() => setCurrentStep('start')}
+                  className="w-full sm:w-auto flex-1 bg-slate-800 text-slate-300 font-bold py-4 rounded-xl hover:bg-slate-700 transition-all border border-slate-700"
+                >
+                  Prøv igjen 🔄
+                </button>
+                <a 
+                  href="/krypto"
+                  className="w-full sm:w-auto flex-[2] bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-orange-500/20 text-center flex items-center justify-center active:scale-95"
+                >
+                  Les den fulle Krypto-Guiden ✨
+                </a>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
