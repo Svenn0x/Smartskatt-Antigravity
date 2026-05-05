@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300 py-12 mt-24">
       <div className="max-w-5xl mx-auto px-4 flex flex-col items-center text-center text-sm">
-        <Logo variant="dark" size={48} className="mb-6 opacity-90" />
+        <Logo variant="dark" size={48} className="mb-8 opacity-80" />
         
         <div className="flex flex-wrap justify-center gap-6 mb-8 font-semibold">
           <a href="/eiendom" className="hover:text-white transition-colors">Eiendom & Bolig</a>
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p>&copy; {new Date().getFullYear()} Smartskatt.no. Alle rettigheter reservert.</p>
+        <p className="text-slate-400">&copy; {new Date().getFullYear()} Smartskatt.no. Alle rettigheter reservert.</p>
       </div>
     </footer>
   );

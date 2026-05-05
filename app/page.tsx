@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-full pb-24">
+    <div className="flex flex-col w-full pb-24">
       {/* Enterprise Hero Slider Section */}
       <HeroSlider />
 

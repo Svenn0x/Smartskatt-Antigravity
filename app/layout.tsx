@@ -119,9 +119,11 @@ export default function RootLayout({
         />
         */}
       </head>
-      <body className="min-h-screen flex flex-col font-sans text-slate-900 bg-slate-50 antialiased relative selection:bg-blue-200 selection:text-blue-900">
-        {/* Premium Background Elements */}
-        <div className="absolute inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+      <body className="min-h-screen flex flex-col font-sans text-slate-900 bg-slate-50 antialiased selection:bg-blue-200 selection:text-blue-900">
+        {/* Premium Background Elements – sits behind all content via z-[-1], 
+            but uses 'fixed' so it never creates a stacking-context that 
+            interferes with the hero's solid bg-slate-900. */}
+        <div className="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none">
           <div className="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(37,99,235,0.15),rgba(255,255,255,0))]"></div>
         </div>
         

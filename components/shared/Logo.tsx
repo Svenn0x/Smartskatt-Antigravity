@@ -8,7 +8,7 @@ interface LogoProps {
 }
 
 export default function Logo({ className = '', variant = 'light', size = 32 }: LogoProps) {
-  const textColor = variant === 'light' ? 'text-primary' : 'text-white';
+  const imageFilter = variant === 'dark' ? 'brightness-0 invert' : '';
   
   return (
     <div className={`flex items-center ${className}`}>
@@ -17,7 +17,7 @@ export default function Logo({ className = '', variant = 'light', size = 32 }: L
         alt="Smartskatt.no - Finn dine skattefradrag" 
         width={size * 6} 
         height={size * 1.5} 
-        className="flex-shrink-0 drop-shadow-sm object-contain" 
+        className={`flex-shrink-0 drop-shadow-sm object-contain ${imageFilter}`} 
       />
     </div>
   );
