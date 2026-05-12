@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Home, TrendingUp, TrendingDown, Info, CheckCircle2, AlertCircle } from 'lucide-react';
+import AnimatedCounter from './AnimatedCounter';
 
 export default function BoligsalgKalkulator() {
   const [salgssum, setSalgssum] = useState<string>('');
@@ -162,8 +163,8 @@ export default function BoligsalgKalkulator() {
                     {isGevinst ? 'Beregnet Gevinst' : 'Beregnet Tap'}
                   </p>
                   <div className="flex items-center space-x-2">
-                    <span className="text-4xl font-extrabold text-slate-900">
-                      {formatCurrency(Math.abs(differanse))}
+                    <span className={`text-5xl font-extrabold ${isGevinst ? 'text-emerald-600' : 'text-rose-600'}`}>
+                      <AnimatedCounter value={Math.abs(differanse)} />
                     </span>
                     {isGevinst ? <TrendingUp className="w-6 h-6 text-emerald-500" /> : <TrendingDown className="w-6 h-6 text-rose-500" />}
                   </div>
@@ -175,8 +176,8 @@ export default function BoligsalgKalkulator() {
                       ? 'Skatt å betale' 
                       : (isGevinst ? 'Skatt å betale (22%)' : 'Skattefradrag (22%)')}
                   </p>
-                  <span className={`text-3xl font-bold ${oppfyllerBokrav ? 'text-emerald-600' : 'text-slate-900'}`}>
-                    {formatCurrency(skatt)}
+                  <span className={`text-4xl font-bold ${oppfyllerBokrav ? 'text-emerald-600' : (isGevinst ? 'text-rose-600' : 'text-emerald-600')}`}>
+                    <AnimatedCounter value={skatt} />
                   </span>
                 </div>
               </div>

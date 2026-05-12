@@ -4,8 +4,10 @@ import { useState, useMemo } from 'react';
 import AffiliateButton from '../shared/AffiliateButton';
 import RecommendationCard from './RecommendationCard';
 import ComparisonBox from './ComparisonBox';
-import { Building2, Bitcoin, Home, Landmark, Wallet } from 'lucide-react';
+import { Building2, Bitcoin, Home, Landmark, Wallet, ArrowRight } from 'lucide-react';
 import { formatKr } from '@/lib/taxCalculations';
+import AnimatedCounter from './AnimatedCounter';
+import Link from 'next/link';
 
 export default function SmartskattKalkulator() {
   const [inntekt, setInntekt] = useState<number>(650000);
@@ -332,8 +334,8 @@ export default function SmartskattKalkulator() {
             <div className="space-y-6 relative z-10">
               <div>
                 <span className="block text-lg font-medium text-slate-300 mb-2">Potensiell skattebesparelse</span>
-                <div className="text-5xl font-extrabold text-secondary drop-shadow-md">
-                  {formatKr(resultater.totalBesparelse)}
+                <div className="text-6xl font-extrabold text-emerald-400 drop-shadow-md tracking-tight">
+                  <AnimatedCounter value={resultater.totalBesparelse} />
                 </div>
               </div>
 
@@ -403,7 +405,19 @@ export default function SmartskattKalkulator() {
 
           {/* 4. Sammenligningsboks for Bedrift/ENK */}
           {arbeidstype === 'bedrift/ENK' && (
-            <ComparisonBox />
+            <>
+              <ComparisonBox />
+              <div className="mt-8 pt-6 border-t border-slate-200 text-center animate-in fade-in">
+                <h4 className="text-lg font-bold text-slate-800 mb-4">Hva nå?</h4>
+                <Link 
+                  href="/sammenlign/regnskap"
+                  className="inline-flex justify-center items-center gap-2 bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl shadow-[0_0_15px_rgba(79,70,229,0.5)] hover:bg-indigo-700 transition-all active:scale-[0.98] animate-pulse"
+                >
+                  Sammenlign Regnskapsprogrammer
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+            </>
           )}
         </div>
       </div>

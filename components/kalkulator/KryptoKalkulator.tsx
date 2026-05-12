@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { Calculator, ArrowRight, TrendingUp, TrendingDown, Info } from 'lucide-react';
+import AnimatedCounter from './AnimatedCounter';
+import Link from 'next/link';
 
 export default function KryptoKalkulator() {
   const [kjopesum, setKjopesum] = useState<string>('');
@@ -80,19 +82,19 @@ export default function KryptoKalkulator() {
                   {isGevinst ? 'Estimert Gevinst' : 'Estimert Tap'}
                 </p>
                 <div className="flex items-center space-x-2">
-                  <span className={`text-3xl font-bold ${isGevinst ? 'text-emerald-900' : 'text-rose-900'}`}>
-                    {formatCurrency(Math.abs(differanse))}
+                  <span className={`text-4xl font-extrabold ${isGevinst ? 'text-emerald-600' : 'text-rose-600'}`}>
+                    <AnimatedCounter value={Math.abs(differanse)} />
                   </span>
                   {isGevinst ? <TrendingUp className="w-6 h-6 text-emerald-500" /> : <TrendingDown className="w-6 h-6 text-rose-500" />}
                 </div>
               </div>
               
               <div className="text-right">
-                <p className={`text-sm font-semibold uppercase tracking-wider mb-1 ${isGevinst ? 'text-slate-500' : 'text-slate-500'}`}>
+                <p className={`text-sm font-semibold uppercase tracking-wider mb-1 text-slate-500`}>
                   {isGevinst ? 'Skatt å betale (22%)' : 'Skattefradrag (22%)'}
                 </p>
-                <span className={`text-3xl font-bold ${isGevinst ? 'text-slate-900' : 'text-slate-900'}`}>
-                  {formatCurrency(skatt)}
+                <span className={`text-4xl font-bold ${isGevinst ? 'text-rose-600' : 'text-emerald-600'}`}>
+                  <AnimatedCounter value={skatt} />
                 </span>
               </div>
             </div>
@@ -104,6 +106,17 @@ export default function KryptoKalkulator() {
                   ? 'Gevinsten skal føres i skattemeldingen, og øker din skatt med 22% av det opptjente beløpet.'
                   : 'Tapet kan føres som fradrag i skattemeldingen, noe som reduserer din totale skatt med 22% av tapet.'}
               </p>
+            </div>
+            
+            <div className="mt-8 pt-8 border-t border-slate-200 flex flex-col items-center">
+              <h4 className="text-lg font-bold text-slate-800 mb-4">Hva nå?</h4>
+              <Link 
+                href="/sammenlign/krypto"
+                className="inline-flex justify-center items-center gap-2 bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl shadow-[0_0_15px_rgba(79,70,229,0.5)] hover:bg-indigo-700 transition-all active:scale-[0.98] animate-pulse"
+              >
+                Sammenlign Krypto-Skatteverktøy
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </div>
           </div>
         )}

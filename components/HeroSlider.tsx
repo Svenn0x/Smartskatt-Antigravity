@@ -69,6 +69,11 @@ export default function HeroSlider() {
             </AnimatePresence>
           </div>
 
+          <div className="flex items-center gap-2 mb-8 lg:mb-10 text-emerald-400 text-sm font-medium bg-white/5 border border-white/10 px-4 py-2 rounded-lg self-start shadow-sm">
+            <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
+            <span className="text-white/90">Sist oppdatert for skatteåret 2026 – Enkel og trygg veiledning.</span>
+          </div>
+
           {/* CTA-knapper */}
           <div className="mt-28 flex flex-col sm:flex-row gap-4">
             <Link
